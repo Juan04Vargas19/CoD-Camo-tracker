@@ -269,6 +269,7 @@ const armas = [
     platino: false, 
     poli: false
     },
+    
 //ESCOPETAS
     {nombre: 'Lockwood 300', 
     tipo: 'shotgun', 

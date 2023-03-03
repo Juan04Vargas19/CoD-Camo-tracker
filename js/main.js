@@ -13,6 +13,8 @@ const a = document.querySelectorAll('.a')
 const b = document.querySelectorAll('.b')
 const arr = document.querySelectorAll('.arrow')
 
+const inputsBase = document.getElementsByClassName('inputs-base')
+
 let intentos = 0
 //Extrae las armas en las que ya se completaron todos 4 los desafíos base, y por ende ya tienen el desafío de oro disponible
 let armasOroDisponible
@@ -224,9 +226,41 @@ for (let i = 0; i < q.length; i++) {
 }
 
 //Separar los array por tipo de arma para verificar si se cumplen requerimientos para desbloquear el desafío de Platino
-const rifles = armas.filter(arma => arma.tipo === 'AR')
-const subfusiles = armas.filter(arma => arma.tipo === 'SMG')
-const ametralladoras = armas.filter(arma => arma.tipo === 'LMG')
+const fusilesAsaltoArr = armas.filter(arma => arma.tipo === 'AR')
+const fusilesCombateArr = armas.filter(arma => arma.tipo === 'BR')
+const subfusilesArr = armas.filter(arma => arma.tipo === 'SMG')
+const escopetasArr = armas.filter(arma => arma.tipo === 'shotgun')
+const ametralladorasArr = armas.filter(arma => arma.tipo === 'LMG')
+const fusilestTactArr = armas.filter(arma => arma.tipo === 'markR')
+const snipersArr = armas.filter(arma => arma.tipo === 'snpr')
+const pistolArr = armas.filter(arma => arma.tipo === 'pistol')
+const launcherArr = armas.filter(arma => arma.tipo === 'rckt')
+const meleeArr = armas.filter(arma => arma.tipo === 'melee')
+
+preguntarBase()
+
+function preguntarBase(){
+    for(let i = 0; i < armas.length; i++){
+        let arma = armas[i]
+        let inputBase = inputsBase[i]
+        
+        inputBase.addEventListener('click', ()=>{
+            arma.desafiosBase = true
+        })
+        
+    }
+    console.log(fusilesAsaltoArr)
+
+    
+    //Se crea un arreglo que almacena las armas en las que se completaron los 4 camuflajes base y por ende ya tienen disponible el desafío de Oro
+    armasOroDisponible = armas.filter(arma => arma.desafiosBase === true)
+    console.log(armasOroDisponible)
+    if(armasOroDisponible.length === 0){
+        // alert('Recuerda que debes desbloquear los 4 camuflajes base de cada arma para desbloquear los desafíos de Oro')
+    } else{
+        // preguntarOro()
+    }
+}
 
 //función para preguntar nombre de usuario o correo al user
 // function preguntarUsuario(){
