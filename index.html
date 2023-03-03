@@ -5,12 +5,197 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COD Camo tracker | Rastrea el progreso de tus camuflajes en MWII</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+    <header>
+        <nav class="navbar">
+            <h1 class="navbar-title">CoD Camo tracker</h1>
+            <ul class="navbar-list">
+                <li class="navbar-list-element">Tips</li>
+                <li class="navbar-list-element">Clases</li>
+                <li class="navbar-list-element">Perfil</li>
+            </ul>
+        </nav>
+    </header>
     
-    <section id="prueba"></section>
-    <h1>Call of Duty Camo Tracker</h1>
-    <h2>Instrucciones del simulador:</h2>
+    <h2 class="main-title">Bienvenido</h2>
+    <p class="desc">Utiliza este ___ para rastrear el progreso que llevas para desbloquear todos los camuflajes en tus armas de Call of Duty: Modern Warfare II</p>
+    <section id="main">
+        <div id="main-orion">
+            <img src="./assets/orion.jpg" alt="Logo camuflaje" id="main-orion-img">
+            <p>0%</p>
+        </div>
+        <ul class="armas">
+            
+            <li class="armas-elemento">
+                <div class="q">
+                    <span class="arrow"></span>
+                    <span>Fusiles de asalto</span>
+                </div>
+                <div class="b">
+                    <span class="b-element"></span>
+                    <span class="b-element">Camuflajes base</span>
+                    <span class="b-element">Oro</span>
+                    <span class="b-element">Platino</span>
+                    <span class="b-element">Poliatómico</span>
+                </div>
+                <div class="a">
+                    <ul id="fusiles-asalto"></ul>
+                </div>
+            </li>
+            <li class="armas-elemento">
+                <div class="q">
+                    <span class="arrow"></span>
+                    <span>Fusiles de combate</span>
+                </div>
+                <div class="b">
+                    <span class="b-element"></span>
+                    <span class="b-element">Camuflajes base</span>
+                    <span class="b-element">Oro</span>
+                    <span class="b-element">Platino</span>
+                    <span class="b-element">Poliatómico</span>
+                </div>
+                <div class="a">
+                    <ul id="fusiles-combate"></ul>
+                </div>
+            </li>
+            <li class="armas-elemento">
+                <div class="q">
+                    <span class="arrow"></span>
+                    <span>Subfusiles</span>
+                </div>
+                <div class="b">
+                    <span class="b-element"></span>
+                    <span class="b-element">Camuflajes base</span>
+                    <span class="b-element">Oro</span>
+                    <span class="b-element">Platino</span>
+                    <span class="b-element">Poliatómico</span>
+                </div>
+                <div class="a">
+                    <ul id="subfusiles"></ul>
+                </div>
+            </li>
+            <li class="armas-elemento">
+                <div class="q">
+                    <span class="arrow"></span>
+                    <span>Escopetas</span>
+                </div>
+                <div class="b">
+                    <span class="b-element"></span>
+                    <span class="b-element">Camuflajes base</span>
+                    <span class="b-element">Oro</span>
+                    <span class="b-element">Platino</span>
+                    <span class="b-element">Poliatómico</span>
+                </div>
+                <div class="a">
+                    <ul id="escopetas"></ul>
+                </div>
+            </li>
+            <li class="armas-elemento">
+                <div class="q">
+                    <span class="arrow"></span>
+                    <span>Ametralladoras ligeras</span>
+                </div>
+                <div class="b">
+                    <span class="b-element"></span>
+                    <span class="b-element">Camuflajes base</span>
+                    <span class="b-element">Oro</span>
+                    <span class="b-element">Platino</span>
+                    <span class="b-element">Poliatómico</span>
+                </div>
+                <div class="a">
+                    <ul id="ametralladoras"></ul>
+                </div>
+            </li>
+            <li class="armas-elemento">
+                <div class="q">
+                    <span class="arrow"></span>
+                    <span>Fusiles tácticos</span>
+                </div>
+                <div class="b">
+                    <span class="b-element"></span>
+                    <span class="b-element">Camuflajes base</span>
+                    <span class="b-element">Oro</span>
+                    <span class="b-element">Platino</span>
+                    <span class="b-element">Poliatómico</span>
+                </div>
+                <div class="a">
+                    <ul id="fusiles-tact"></ul>
+                </div>
+            </li>
+            <li class="armas-elemento">
+                <div class="q">
+                    <span class="arrow"></span>
+                    <span>Snipers</span>
+                </div>
+                <div class="b">
+                    <span class="b-element"></span>
+                    <span class="b-element">Camuflajes base</span>
+                    <span class="b-element">Oro</span>
+                    <span class="b-element">Platino</span>
+                    <span class="b-element">Poliatómico</span>
+                </div>
+                <div class="a">
+                    <ul id="snipers"></ul>
+                </div>
+            </li>
+            <li class="armas-elemento">
+                <div class="q">
+                    <span class="arrow"></span>
+                    <span>Pistolas</span>
+                </div>
+                <div class="b">
+                    <span class="b-element"></span>
+                    <span class="b-element">Camuflajes base</span>
+                    <span class="b-element">Oro</span>
+                    <span class="b-element">Platino</span>
+                    <span class="b-element">Poliatómico</span>
+                </div>
+                <div class="a">
+                    <ul id="pistol"></ul>
+                </div>
+            </li>
+            <li class="armas-elemento">
+                <div class="q">
+                    <span class="arrow"></span>
+                    <span>Lanzacohetes</span>
+                </div>
+                <div class="b">
+                    <span class="b-element"></span>
+                    <span class="b-element">Camuflajes base</span>
+                    <span class="b-element">Oro</span>
+                    <span class="b-element">Platino</span>
+                    <span class="b-element">Poliatómico</span>
+                </div>
+                <div class="a">
+                    <ul id="launcher"></ul>
+                </div>
+            </li>
+            <li class="armas-elemento">
+                <div class="q">
+                    <span class="arrow"></span>
+                    <span>Cuerpo a cuerpo</span>
+                </div>
+                <div class="b">
+                    <span class="b-element"></span>
+                    <span class="b-element">Camuflajes base</span>
+                    <span class="b-element">Oro</span>
+                    <span class="b-element">Platino</span>
+                    <span class="b-element">Poliatómico</span>
+                </div>
+                <div class="a">
+                    <ul id="melee"></ul>
+                </div>
+            </li>
+        </ul>
+    </section>
+    
+    <script src="./js/array.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
+    <!-- <h2>Instrucciones del simulador:</h2>
     <h4>El simulador es un rastreador de los camuflajes que le faltan a los jugadores para completar todos los desafíos del juego.</h4>
     <h4>Para probar el simulador:</h4>
     <ul>

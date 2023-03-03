@@ -271,7 +271,7 @@ const armas = [
     },
 //ESCOPETAS
     {nombre: 'Lockwood 300', 
-    tipo: 'Shotgun', 
+    tipo: 'shotgun', 
     img: 'https://images-eds-ssl.xboxlive.com/image?url=MSVnmBUo_fHjbLYMjAEUQ7bkdfVEEp_ssyzD9VUzrliD9_7SU95CbkUIqk3PXKKCpyAVAHdUkirXyxj_gf9A01eKgS2rtwaA7yAYXCbqMjd5hIckWFsjZNQKwrT0U0QidjN44qnqb42ouWFKw3I.R8vbmjGdVui6FVR7obT5S.Sby9ObVxypSAsFl2xExxr3mB5QB9uiuSs60BPiGUYKb5xCli5w3am1XOG96Hk9qEtZ8UFYHcEEuPalEz2pDxW_BgAZRKDbF5WfucFP9v4LzK9Jt6fViR49DrASeRrvVlQ-',
     imgOro: 'https://images-eds-ssl.xboxlive.com/image?url=MSVnmBUo_fHjbLYMjAEUQ_QLQhZ8X.0dh1rxYwf72m3mwrcmC6aOm75hC5l5GtYL5AE8.izzZjhMJJt7QU1CRJy5HVhDwsmkVM1gP3dy5wWRaZRvTJO35i2e68dojw5wEDIHk6t9bEssKMQaeRv422u7Tbk0aXppyaHt_mOWKd9lUL4BgHkzbtroynVcAif3r15WQKP7PrRWL8q15tX_laF4.8zqAzGMCr_DiNVkVQmMjvEunn8DS06SfVai6aMUDVpgTVFtyVRetDn2qOYhR1hgeODhBzFUXmDsyni.PBk-', 
     imgPlat: 'https://images-eds-ssl.xboxlive.com/image?url=MSVnmBUo_fHjbLYMjAEUQ0pdKB2YkZq5Ep2XNngwnYSbh2PiES3DwzQRPNVvEGumzfi4RB81QDNFS6gljfnOHIVthxwRdUJ.f_n3_cSCYmjnutP0t_0bHQglvI_Pd3BF9yin6PIGpvwYrf8_hAmViKFpc2hYxneBvteiTe7O3ymMQqhOanHzcLMGNfTdXzu..2BGkqeMXBlcZm1P8B4aPYfIwDfHKtBZwb5JM_4xZXFv5vKl4RUBQu0IYrNkuBUjbu5o317dTEM1OozB_z2hnZTgJBWybtslP_tTRHlg8hc-',
@@ -283,7 +283,7 @@ const armas = [
     poli: false
     },
     {nombre: 'Expedite 12', 
-    tipo: 'Shotgun', 
+    tipo: 'shotgun', 
     img: 'https://images-eds-ssl.xboxlive.com/image?url=MSVnmBUo_fHjbLYMjAEUQ1997NqViwRuhp37ECgBmpi7rzapBotr8kP2dU10mYku3E6qEhX_LB.N06I9.TMeO7710b9RKLOaFw842yuH.7m_fEjnOnDtTW6Dw8I52w88gIJQeUrBol32OzsoXIFGbFQZ5GXsr1JSBabG4jewRhgxhX0uO4DiEgeR2fHudkBUJV_nPSFpx0rBVKfv.eV8GNGDU2EADYXUCc.1bk4Z5XApIpfa0VYzwfyoXNu8O0oUbyff9mF3jdXVp7JqMFZFmeXjsQ66bXzs7TJzyxy_wSw-',
     imgOro: 'https://images-eds-ssl.xboxlive.com/image?url=MSVnmBUo_fHjbLYMjAEUQ0pdKB2YkZq5Ep2XNngwnYSbh2PiES3DwzQRPNVvEGumzfi4RB81QDNFS6gljfnOHIVthxwRdUJ.f_n3_cSCYmggHglc2nvlPyHzvNGESBFCmUYSJ1Lo4SIvzeDHG1qkg2.dW1hIz3F1fWxhA0Ky8XPyspllo96.8q6tjjXos654ZEZ85uyPIalgtK9107VT9tHS.FrvC_4bHQrOo1rTonrujOIxWQfkkKXzuj.0onJsl6Xo3Hf5Y61pTPPqeV5BiygT5YwOqnIhgVtZcV0mK9k-', 
     imgPlat: 'https://images-eds-ssl.xboxlive.com/image?url=MSVnmBUo_fHjbLYMjAEUQ_QLQhZ8X.0dh1rxYwf72m3mwrcmC6aOm75hC5l5GtYL5AE8.izzZjhMJJt7QU1CRJy5HVhDwsmkVM1gP3dy5wV1PAOP5LBGCIEzAYAVBra0ynRT8OOwy..CswkP8WZVN5Dq7ibTPfs81Fajgq_OZJYJ5uCOvFgCEH9IbuVSmZxCjUCJmHg_cw_GoCB3Azoc43v8A3Z3vwWjEoNZsxp7EtE0gJpd_QXtWvGh1S4RS7N1HmbtRsrAMh60O00.KC68sEhk6nMdxiwCpSZzkX4QVys-',
@@ -295,7 +295,7 @@ const armas = [
     poli: false
     },
     {nombre: 'Bryson 800', 
-    tipo: 'Shotgun', 
+    tipo: 'shotgun', 
     img: 'https://images-eds-ssl.xboxlive.com/image?url=MSVnmBUo_fHjbLYMjAEUQ7jpZDVN2u6Zk9G1CFEaF7c.XZ8oKqLUS9.OCY6GHUeeK5hVdoFqfYZCgA61VQACJksL1R8g8OOWregGCz37qyfU.bawOpRcqhvEypKp5OlHYPOk.lTX2dC27LxOkO12QNslZNBUGDP1qnosDIu6c_ZPI58vf9gub1aD2jd85foMP3CjIhm3.aUFht36NFAILw4KlUnSjPqvrXdu8zCcisFO5YCZna7vXkC0HSJWgJWi0_iNefr7pGC5zQB1svGdyc0.SGxD7b6QkeV5WfKEKMI-',
     imgOro: 'https://images-eds-ssl.xboxlive.com/image?url=MSVnmBUo_fHjbLYMjAEUQ_QLQhZ8X.0dh1rxYwf72m3mwrcmC6aOm75hC5l5GtYL5AE8.izzZjhMJJt7QU1CRJy5HVhDwsmkVM1gP3dy5wX5dv1I7fVymvLL2ghwiIIOEUsNU0G5ilgPq5i2_IYLFCZ8nOLlZt_28VyYuN0JF02vVOwmLizq4DN9R8BprbDAOyHyJu9E3UJZ.if6EKxZ92n14r3T7E.bXH_88Z518Hqso.mF2O9jk86zXdvc8DIsmy_bVwrmaJNXqTtXGcJ4YE0_d9tlVzeSa4iX7lb0iqg-', 
     imgPlat: 'https://images-eds-ssl.xboxlive.com/image?url=MSVnmBUo_fHjbLYMjAEUQ9fpQks21ckqRnrw.iCplBVpHBX07LbQiMJPq6AcchbxRGg849xXwgPvMsQGgtF28gO.Q8zJeJ_eA07x81XugjPPTTSQu49Si6OSkC2ESyxEofDbFU.4RhIZE_pOK52djqTb0u9QykSVzvW2ELE6JV0l3nauakWOBPBMhbUSuNVOieMwUmqqJUiis4JRjSP871MHykLleEtHLz3LNetWGSJUktOYgtb2CSjQEpMwRed8BjhYp1RvZ968Vq7Y2QmAOZSB4s4Q_vq62e4G_zzr9Bg-',
@@ -307,7 +307,7 @@ const armas = [
     poli: false
     },
     {nombre: 'Bryson 890', 
-    tipo: 'Shotgun', 
+    tipo: 'shotgun', 
     img: 'https://images-eds-ssl.xboxlive.com/image?url=MSVnmBUo_fHjbLYMjAEUQ_QLQhZ8X.0dh1rxYwf72m3mwrcmC6aOm75hC5l5GtYL5AE8.izzZjhMJJt7QU1CRJy5HVhDwsmkVM1gP3dy5wW7BooObUgtCjzokkTPeym4OMc0CWAB3ASJ.UpU.TUIu6Yb60PEYkHU85MhHqXHlmcdWYEaB72423sdIKZXUcKoqrqCUGyk2Cbnb1Hvno9jenwaDT.HJZcWxIzHvjFnYGMcSChFl34u1ozMi4zp6ecenbXpTpYc7lXkm3EB2dSBttHY8kNyLacjYB8TzkDYn8E-',
     imgOro: 'https://images-eds-ssl.xboxlive.com/image?url=MSVnmBUo_fHjbLYMjAEUQ7bkdfVEEp_ssyzD9VUzrliD9_7SU95CbkUIqk3PXKKCpyAVAHdUkirXyxj_gf9A01eKgS2rtwaA7yAYXCbqMjcaGNDVAUo5umesCP7YhlhdMRAiUlwgiNPyrWSd3hOAN8dqKZXQp9PaorZsJmgGVMtX2XFrriNOyEBGOZw63JSzO8NfTX2MymLF1k.T6bCxJx3BmQQlYnMMuIiNrNmxTwig9lVki1c4w_T.MkPLtmPOWyWCm3S2G6gLOAQoYjfjqNx9VqtAzic0tTA5GpVwyGs-', 
     imgPlat: 'https://images-eds-ssl.xboxlive.com/image?url=MSVnmBUo_fHjbLYMjAEUQ7jpZDVN2u6Zk9G1CFEaF7c.XZ8oKqLUS9.OCY6GHUeeK5hVdoFqfYZCgA61VQACJksL1R8g8OOWregGCz37qyc1kfOw54RvYHxmib_db70.faOTxyUSZB0PgPX_aFC0F109EJZM6ehmzu6lOD.ii.9j_5rQA1LsoHDfSX1UYoCovanb1JaGeNiM61idf3Sv26iYZdF4fbvdagZeGcdwY5RbkJc8XViLdrOzqnywrR3uELuv.O5YyVeF.Qb77FBapIMiZ0YL72v78l11G__iapM-',

@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Alef&family=Sarala&display=swap');
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Alef', sans-serif;
+    font-family: 'Sarala', sans-serif;    
+    background: #1a1a1a;
+    color: white;
+}
+
+header{
+    background: #000;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+}
+
+.navbar-title{
+    padding: 0px 30px;
+    font-size: 40px;
+    color: #4E9F3D;
+}
+
+.navbar-list{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    color: #D8E9A8;
+}
+
+.navbar-list-element{
+    padding: 0px 30px;
+    font-size: 25px;
+}
+
+
+.main-title{
+    padding: 20px 30px;
+}
+
+.desc{
+    padding: 20px 30px;
+}
+
+#main-orion{
+    border: #D8E9A8 1px solid;
+    margin: 0 50px;
+    border-left: 10px #D8E9A8 solid;
+    height: 100px;
+    padding: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 30px;
+}
+
+#main-orion-img{
+    height: 80px;
+
+}
+
+.q{
+    border: #D8E9A8 1px solid;
+    padding: 1em 0;
+    border-left: 10px #D8E9A8 solid;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.q:hover, .q:hover .arrow{
+    transition: 0.5s;
+    border-left-color: #4E9F3D;
+}
+
+.arrow{
+    display: inline-block;
+    margin: 0 0.5em;
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-left: 10px solid #555;
+    border-bottom: 6px solid transparent;
+    transition: 0.5s;
+}
+
+.b{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    overflow: hidden;
+    height: 0;
+}
+
+.b-opened{
+    height: initial;
+    transition: 0.3s;
+}
+
+.b-element{
+    border: #413939 1px solid;
+    text-align: center;
+    font-size: 25px;
+}
+
+.a{
+    overflow: hidden;
+    height: 0;
+}
+
+.a-opened{
+    height: initial;
+    transition: 0.3s;
+}
+
+.arrow-rotated{
+    transform: rotate(90deg);
+}
+
+#main{
+    max-width: 100%;
+}
+
+.armas-elemento{
+    padding: 0px 50px;
+    font-size: 35px;
+    list-style: none;
+}
+
+#fusiles-asalto{
+    list-style: none;
+}
+
+.fusiles-asalto-elemento{
+    /* padding: 20px 50px; */
+    font-size: 25px;
+    border: #413939 1px solid;
+    height: 300px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 0.2fr 1fr 0.1fr 1fr 0.2fr;
+    grid-auto-flow: column;
+}
+
+.fusiles-asalto-elemento-nombre{
+    text-align: center;
+    padding-top: 10px;
+}
+
+.fusiles-asalto-elemento-img{
+    height: 180px;
+    width: 280px;
+    grid-row: 2 / 6;
+    justify-self: center;
+    align-self: center;
+}
+
+.inputs-base{
+    grid-column-start: 2;
+    grid-row: 3;
+}
+
+.inputs-oro{
+    grid-column-start: 3;
+    grid-row: 3;
+}
+
+.inputs-plat{
+    grid-column-start: 4;
+    grid-row: 3;
+}
+
+.inputs-poli{
+    
+    grid-column-start: 5;
+    grid-row: 3;
+}
