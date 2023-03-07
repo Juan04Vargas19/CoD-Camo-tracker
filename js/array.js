@@ -269,6 +269,18 @@ const armas = [
     platino: false, 
     poli: false
     },
+    {nombre: 'BAS-P', 
+    tipo: 'SMG', 
+    img: 'https://images-eds-ssl.xboxlive.com/image?url=MSVnmBUo_fHjbLYMjAEUQ9fpQks21ckqRnrw.iCplBVpHBX07LbQiMJPq6AcchbxRGg849xXwgPvMsQGgtF28gO.Q8zJeJ_eA07x81XugjOESGEc7rt9CP5ejnRRJj_mcnaPNB9Th03Zr..cf9myWPRAR2EhbBWnTL6jdV4lU6HJMW8KkzM8I_O29HBPIX3nx6oEYmzUkMxyP2JkWSSdDOBB0ielu8TrOWiq3JKQyp9X4zl.tgJIpmXypQ6T0MNHApdUncDQv_AxQROOCBNMRQKEaLbhN62x3iXH5cqaxOg-',
+    imgOro: 'https://images-eds-ssl.xboxlive.com/image?url=MSVnmBUo_fHjbLYMjAEUQ7jpZDVN2u6Zk9G1CFEaF7c.XZ8oKqLUS9.OCY6GHUeeK5hVdoFqfYZCgA61VQACJksL1R8g8OOWregGCz37qyeXYZUTJtQlpOUO67e8fS5Ky6pQb2kcHQ1VS8Ba.BuX_3u4ADP.LfjOvToaiGpI1zXIqbi7f8OhEWslzUIbKE4qztUgdR1fyi_JGOIkMFe5by9BwSRGEXm19QEdNa.z9zGJaoijWeU1UkM5innHN7kEyHP3fW.31boZg53REP3xC_dDRPbEa71HUF0Czr9w7K0-', 
+    imgPlat: 'https://images-eds-ssl.xboxlive.com/image?url=MSVnmBUo_fHjbLYMjAEUQ7bkdfVEEp_ssyzD9VUzrliD9_7SU95CbkUIqk3PXKKCpyAVAHdUkirXyxj_gf9A01eKgS2rtwaA7yAYXCbqMjfKmTiYl5zVBQMxxT4Jo7aQmkk5JToEzyJ9O6y8.MNUtjAxEEvIs2MptMkmwoPs0wgfyliqBbmPeBsvnkEp8YwtrHHZmUq1GNkTd3b.BHov32W5bWeysirMvBXdGRApJwHVXiEgzXGfS4FJeAxQu4BzxyhSYjY2cKIeyV4HZdtZRNetAAEFJIj5Hya3FnH3dXQ-',
+    imgPoli: 'https://images-eds-ssl.xboxlive.com/image?url=MSVnmBUo_fHjbLYMjAEUQ7jpZDVN2u6Zk9G1CFEaF7c.XZ8oKqLUS9.OCY6GHUeeK5hVdoFqfYZCgA61VQACJksL1R8g8OOWregGCz37qydhEbU6bxHVLjLowW3OLDbcwJduht9TLS4600xwcaVhI87PnVQutd3FPL6oJSa0hO6cQkWx66PqO1UxRpgO.twWNDYIV8xyzvClIuQt6Mk.rCd5x6tE21AY6Iio0nWtejY6zPQbSJe_kX6S2RBjcJS5g3VI1bkfovIxdOL.l.NDZkoNzzCTSRTA.TFW5vidyaY-',
+    imgOrion: 'https://images-eds-ssl.xboxlive.com/image?url=MSVnmBUo_fHjbLYMjAEUQ7bkdfVEEp_ssyzD9VUzrliD9_7SU95CbkUIqk3PXKKCpyAVAHdUkirXyxj_gf9A01eKgS2rtwaA7yAYXCbqMjetQ3rPqIoTdWAQOuWT9aLIT8EMx5LTPOil5R4kZ1v4OoovqLo.bpUxxm_4VS31t9kxbhGWatCvHycpx3GesFKUs5fzxSTkSpwR3ldSF_19kIZH7ClJcoArrsQe0dnbaQGfrtxzYwy8KopDN5OiLE354V7Jl3wlby2JbtzwMn4PNgcfY6nj6dbWfIaxBtfQTOA-',
+    desafiosBase: false, 
+    oro: false, 
+    platino: false, 
+    poli: false
+    },
     
 //ESCOPETAS
     {nombre: 'Lockwood 300', 

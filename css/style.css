@@ -20,11 +20,12 @@ header{
 nav{
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .navbar-title{
     padding: 0px 30px;
-    font-size: 40px;
+    font-size: 60px;
     color: #4E9F3D;
 }
 
@@ -43,10 +44,12 @@ nav{
 
 .main-title{
     padding: 20px 30px;
+    font-size: 40px;
 }
 
 .desc{
     padding: 20px 30px;
+    font-size: 25px;
 }
 
 #main-orion{
@@ -105,8 +108,16 @@ nav{
 
 .b-element{
     border: #413939 1px solid;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 25px;
+    padding: 15px 0px;
+}
+
+.b-element img{
+    height: 80px;
+    width: 80px;
 }
 
 .a{
@@ -126,6 +137,7 @@ nav{
 
 #main{
     max-width: 100%;
+    margin-bottom: 30px;
 }
 
 .armas-elemento{
@@ -139,13 +151,18 @@ nav{
 }
 
 .fusiles-asalto-elemento{
-    /* padding: 20px 50px; */
     font-size: 25px;
     border: #413939 1px solid;
     height: 300px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    justify-items: center;
     grid-auto-flow: column;
+}
+
+.armas-buttons-section{
+    border: #413939 1px solid;
 }
 
 .fusiles-asalto-elemento-nombre{
@@ -161,27 +178,51 @@ nav{
     align-self: center;
 }
 
-.button-base{
-    grid-column-start: 2;
-    grid-row: 3;
+.button-oro::before, .button-plat::before, .button-poli::before{
+    content: attr(data-hover);
+    visibility: hidden;
+    opacity: 0;
+    width: 120px;
+    background-color: #000;
+    color: #fff;
+    text-align: left;
+    border-radius: 5px;
+    padding: 5px 0;
+    transition: opacity 1s ease-in-out;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 110%;
 }
 
-.button-base-clicked, .button-oro-clicked, .button-plat-clicked{
+.button-oro:hover::before, .button-plat:hover::before, .button-poli:hover::before{
+    opacity: 1;
+    visibility: visible;
+}
+
+.button-base, .button-oro, .button-plat, .button-poli{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+}
+
+.button-base-clicked, .button-oro-clicked, .button-plat-clicked, .button-poli-clicked{
     background-color: #4E9F3D;
 }
 
-.button-oro{
-    grid-column-start: 3;
-    grid-row: 3;
+footer{
+    background: #575757;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 150px;
+    padding: 0px 450px;
+    margin-top: 20px;
+    color: #000;
 }
 
-.button-plat{
-    grid-column-start: 4;
-    grid-row: 3;
-}
-
-.button-poli{
-    
-    grid-column-start: 5;
-    grid-row: 3;
+.footer-img{
+    height: 40px;
+    width: 40px;
 }

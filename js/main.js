@@ -19,7 +19,7 @@ const buttonsPlat = document.getElementsByClassName('button-plat')
 const buttonsPoli = document.getElementsByClassName('button-poli')
 
 const armasImg = document.getElementsByClassName('fusiles-asalto-elemento-img')
-console.log(armasImg)
+const armasImgCompleted = document.getElementsByClassName('fusiles-asalto-elemento-img-completed')
 
 let armasBase = []
 let armasOro = []
@@ -38,54 +38,40 @@ let buttonsPlatMelee = []
 let buttonsPoliArr = []
 
 
-let intentos = 0
-//Extrae las armas en las que ya se completaron todos 4 los desafíos base, y por ende ya tienen el desafío de oro disponible
-let armasOroDisponible
-//Variables que almacenan arrays de armas que ya completaron el desafío oro
-let oroArCompleto
-let oroSmgCompleto
-let oroLmgCompleto
-//Variables que revisan si las armas ya tienen disponible el desafío platino 
-let armasArPlatinoDisponible
-let armasSmgPlatinoDisponible
-let armasLmgPlatinoDisponible
-//Extrae las armas en las que ya se completó el desafío de platino
-let armasPoliDisponible
-//Extrae las armas es las que se completaron todos los desafíos
-let armasCompletadas
-
 armas.forEach((arma)=>{
     if(arma.tipo === 'AR'){
         const fusilesAsalto = document.createElement('li')
         const fusilesAsaltoImg = document.createElement('div')
-        const inputBase = document.createElement('div')
 
         fusilesAsalto.innerHTML = `
-        <p class="armas-elemento-nombre">${arma.nombre}</p>
+        <section>
+            <p class="armas-elemento-nombre">${arma.nombre}</p>
+            <img src='${arma.img}' class="fusiles-asalto-elemento-img">
+        </section>
         <button class="button-base" data-arma="${arma.nombre}"></button>
-        <button class="button-oro" data-arma="${arma.nombre}" disabled></button>
-        <button class="button-plat" data-arma="${arma.nombre}" categoria="${arma.tipo}" disabled></button>
-        <button class="button-poli" data-arma="${arma.nombre}" disabled></button>
+        <button class="button-oro" data-arma="${arma.nombre}" data-hover="Recuerda que primero debes desbloquear todos los camuflajes base para poder desbloquear el desafío de Oro" disabled></button>
+        <button class="button-plat" data-arma="${arma.nombre}" categoria="${arma.tipo}" data-hover="Recuerda que primero debes desbloquear el camuflaje Oro en 8 fusiles de asalto para poder desbloquear el desafío de Platino" disabled></button>
+        <button class="button-poli" data-arma="${arma.nombre}" data-hover="Recuerda que primero debes desbloquear el camuflaje Platino en 51 armas para poder desbloquear el desafío de Poliatómico" disabled></button>
         `
-        fusilesAsaltoImg.innerHTML = `<img src='${arma.img}' class="fusiles-asalto-elemento-img">`
 
         fusilesAsalto.className = 'fusiles-asalto-elemento'
 
         sectionFusilesAsalto.appendChild(fusilesAsalto)
         fusilesAsalto.appendChild(fusilesAsaltoImg)
-        fusilesAsalto.appendChild(inputBase)
     } else if(arma.tipo === 'BR'){
         const fusilesCombate = document.createElement('li')
         const fusilesCombateImg = document.createElement('div')
 
         fusilesCombate.innerHTML = `
-        <p class="armas-elemento-nombre">${arma.nombre}</p>
+        <section>
+            <p class="armas-elemento-nombre">${arma.nombre}</p>
+            <img src='${arma.img}' class="fusiles-asalto-elemento-img">
+        </section>
         <button class="button-base" data-arma="${arma.nombre}"></button>
-        <button class="button-oro" data-arma="${arma.nombre}" disabled></button>
-        <button class="button-plat" data-arma="${arma.nombre}" categoria="${arma.tipo}" disabled></button>
-        <button class="button-poli" data-arma="${arma.nombre}" disabled></button>
+        <button class="button-oro" data-arma="${arma.nombre}" data-hover="Recuerda que primero debes desbloquear todos los camuflajes base para poder desbloquear el desafío de Oro" disabled></button>
+        <button class="button-plat" data-arma="${arma.nombre}" categoria="${arma.tipo}" data-hover="Recuerda que primero debes desbloquear el camuflaje Oro en 4 fusiles de combate para poder desbloquear el desafío de Platino" disabled></button>
+        <button class="button-poli" data-arma="${arma.nombre}" data-hover="Recuerda que primero debes desbloquear el camuflaje Platino en 51 armas para poder desbloquear el desafío de Poliatómico" disabled></button>
         `
-        fusilesCombateImg.innerHTML = `<img src='${arma.img}' class='fusiles-asalto-elemento-img'>`
 
         fusilesCombate.className = 'fusiles-asalto-elemento'
 
@@ -96,13 +82,15 @@ armas.forEach((arma)=>{
         const subfusilesImg = document.createElement('div')
 
         subfusiles.innerHTML = `
-        <p class="armas-elemento-nombre">${arma.nombre}</p>
+        <section>
+            <p class="armas-elemento-nombre">${arma.nombre}</p>
+            <img src='${arma.img}' class="fusiles-asalto-elemento-img">
+        </section>
         <button class="button-base" data-arma="${arma.nombre}"></button>
-        <button class="button-oro" data-arma="${arma.nombre}" disabled></button>
-        <button class="button-plat" data-arma="${arma.nombre}" categoria="${arma.tipo}" disabled></button>
-        <button class="button-poli" data-arma="${arma.nombre}" disabled></button>
+        <button class="button-oro" data-arma="${arma.nombre}" data-hover="Recuerda que primero debes desbloquear todos los camuflajes base para poder desbloquear el desafío de Oro" disabled></button>
+        <button class="button-plat" data-arma="${arma.nombre}" categoria="${arma.tipo}" data-hover="Recuerda que primero debes desbloquear el camuflaje Oro en 8 subfusiles para poder desbloquear el desafío de Platino" disabled></button>
+        <button class="button-poli" data-arma="${arma.nombre}" data-hover="Recuerda que primero debes desbloquear el camuflaje Platino en 51 armas para poder desbloquear el desafío de Poliatómico" disabled></button>
         `
-        subfusilesImg.innerHTML = `<img src='${arma.img}' class='fusiles-asalto-elemento-img'>`
 
         subfusiles.className = 'fusiles-asalto-elemento'
 
@@ -113,13 +101,15 @@ armas.forEach((arma)=>{
         const escopetaImg = document.createElement('div')
 
         escopetas.innerHTML = `
-        <p class="armas-elemento-nombre">${arma.nombre}</p>
+        <section>
+            <p class="armas-elemento-nombre">${arma.nombre}</p>
+            <img src='${arma.img}' class="fusiles-asalto-elemento-img">
+        </section>
         <button class="button-base" data-arma="${arma.nombre}"></button>
-        <button class="button-oro" data-arma="${arma.nombre}" disabled></button>
-        <button class="button-plat" data-arma="${arma.nombre}" categoria="${arma.tipo}" disabled></button>
-        <button class="button-poli" data-arma="${arma.nombre}" disabled></button>
+        <button class="button-oro" data-arma="${arma.nombre}" data-hover="Recuerda que primero debes desbloquear todos los camuflajes base para poder desbloquear el desafío de Oro" disabled></button>
+        <button class="button-plat" data-arma="${arma.nombre}" categoria="${arma.tipo}" data-hover="Recuerda que primero debes desbloquear el camuflaje Oro en 4 escopetas para poder desbloquear el desafío de Platino" disabled></button>
+        <button class="button-poli" data-arma="${arma.nombre}" data-hover="Recuerda que primero debes desbloquear el camuflaje Platino en 51 armas para poder desbloquear el desafío de Poliatómico" disabled></button>
         `
-        escopetaImg.innerHTML = `<img src='${arma.img}' class='fusiles-asalto-elemento-img'>`
 
         escopetas.className = 'fusiles-asalto-elemento'
 
@@ -130,13 +120,15 @@ armas.forEach((arma)=>{
         const ametralladoraImg = document.createElement('div')
 
         ametralladoras.innerHTML = `
-        <p class="armas-elemento-nombre">${arma.nombre}</p>
+        <section>
+            <p class="armas-elemento-nombre">${arma.nombre}</p>
+            <img src='${arma.img}' class="fusiles-asalto-elemento-img">
+        </section>
         <button class="button-base" data-arma="${arma.nombre}"></button>
-        <button class="button-oro" data-arma="${arma.nombre}" disabled></button>
-        <button class="button-plat" data-arma="${arma.nombre}" categoria="${arma.tipo}" disabled></button>
-        <button class="button-poli" data-arma="${arma.nombre}" disabled></button>
+        <button class="button-oro" data-arma="${arma.nombre}" data-hover="Recuerda que primero debes desbloquear todos los camuflajes base para poder desbloquear el desafío de Oro" disabled></button>
+        <button class="button-plat" data-arma="${arma.nombre}" categoria="${arma.tipo}" data-hover="Recuerda que primero debes desbloquear el camuflaje Oro en 6 ametralladoras para poder desbloquear el desafío de Platino" disabled></button>
+        <button class="button-poli" data-arma="${arma.nombre}" data-hover="Recuerda que primero debes desbloquear el camuflaje Platino en 51 armas para poder desbloquear el desafío de Poliatómico" disabled></button>
         `
-        ametralladoraImg.innerHTML = `<img src='${arma.img}' class='fusiles-asalto-elemento-img'>`
 
         ametralladoras.className = 'fusiles-asalto-elemento'
 
@@ -147,13 +139,15 @@ armas.forEach((arma)=>{
         const fusilesTactImg = document.createElement('div')
 
         fusilesTact.innerHTML = `
-        <p class="armas-elemento-nombre">${arma.nombre}</p>
+        <section>
+            <p class="armas-elemento-nombre">${arma.nombre}</p>
+            <img src='${arma.img}' class="fusiles-asalto-elemento-img">
+        </section>
         <button class="button-base" data-arma="${arma.nombre}"></button>
-        <button class="button-oro" data-arma="${arma.nombre}" disabled></button>
-        <button class="button-plat" data-arma="${arma.nombre}" categoria="${arma.tipo}" disabled></button>
-        <button class="button-poli" data-arma="${arma.nombre}" disabled></button>
+        <button class="button-oro" data-arma="${arma.nombre}" data-hover="Recuerda que primero debes desbloquear todos los camuflajes base para poder desbloquear el desafío de Oro" disabled></button>
+        <button class="button-plat" data-arma="${arma.nombre}" categoria="${arma.tipo}" data-hover="Recuerda que primero debes desbloquear el camuflaje Oro en 6 fusiles tácticos para poder desbloquear el desafío de Platino" disabled></button>
+        <button class="button-poli" data-arma="${arma.nombre}" data-hover="Recuerda que primero debes desbloquear el camuflaje Platino en 51 armas para poder desbloquear el desafío de Poliatómico" disabled></button>
         `
-        fusilesTactImg.innerHTML = `<img src='${arma.img}' class='fusiles-asalto-elemento-img'>`
 
         fusilesTact.className = 'fusiles-asalto-elemento'
 
@@ -164,13 +158,15 @@ armas.forEach((arma)=>{
         const sniperImg = document.createElement('div')
 
         snipers.innerHTML = `
-        <p class="armas-elemento-nombre">${arma.nombre}</p>
+        <section>
+            <p class="armas-elemento-nombre">${arma.nombre}</p>
+            <img src='${arma.img}' class="fusiles-asalto-elemento-img">
+        </section>
         <button class="button-base" data-arma="${arma.nombre}"></button>
-        <button class="button-oro" data-arma="${arma.nombre}" disabled></button>
-        <button class="button-plat" data-arma="${arma.nombre}" categoria="${arma.tipo}" disabled></button>
-        <button class="button-poli" data-arma="${arma.nombre}" disabled></button>
+        <button class="button-oro" data-arma="${arma.nombre}" data-hover="Recuerda que primero debes desbloquear todos los camuflajes base para poder desbloquear el desafío de Oro" disabled></button>
+        <button class="button-plat" data-arma="${arma.nombre}" categoria="${arma.tipo}" data-hover="Recuerda que primero debes desbloquear el camuflaje Oro en 4 snipers para poder desbloquear el desafío de Platino" disabled></button>
+        <button class="button-poli" data-arma="${arma.nombre}" data-hover="Recuerda que primero debes desbloquear el camuflaje Platino en 51 armas para poder desbloquear el desafío de Poliatómico" disabled></button>
         `
-        sniperImg.innerHTML = `<img src='${arma.img}' class='fusiles-asalto-elemento-img'>`
 
         snipers.className = 'fusiles-asalto-elemento'
 
@@ -181,13 +177,15 @@ armas.forEach((arma)=>{
         const pistolasImg = document.createElement('div')
 
         pistolas.innerHTML = `
-        <p class="armas-elemento-nombre">${arma.nombre}</p>
+        <section>
+            <p class="armas-elemento-nombre">${arma.nombre}</p>
+            <img src='${arma.img}' class="fusiles-asalto-elemento-img">
+        </section>
         <button class="button-base" data-arma="${arma.nombre}"></button>
-        <button class="button-oro" data-arma="${arma.nombre}" disabled></button>
-        <button class="button-plat" data-arma="${arma.nombre}" categoria="${arma.tipo}" disabled></button>
-        <button class="button-poli" data-arma="${arma.nombre}" disabled></button>
+        <button class="button-oro" data-arma="${arma.nombre}" data-hover="Recuerda que primero debes desbloquear todos los camuflajes base para poder desbloquear el desafío de Oro" disabled></button>
+        <button class="button-plat" data-arma="${arma.nombre}" categoria="${arma.tipo}" data-hover="Recuerda que primero debes desbloquear el camuflaje Oro en 5 pistolas para poder desbloquear el desafío de Platino" disabled></button>
+        <button class="button-poli" data-arma="${arma.nombre}" data-hover="Recuerda que primero debes desbloquear el camuflaje Platino en 51 armas para poder desbloquear el desafío de Poliatómico" disabled></button>
         `
-        pistolasImg.innerHTML = `<img src='${arma.img}' class='fusiles-asalto-elemento-img'>`
 
         pistolas.className = 'fusiles-asalto-elemento'
 
@@ -198,13 +196,15 @@ armas.forEach((arma)=>{
         const launchersImg = document.createElement('div')
 
         launchers.innerHTML = `
-        <p class="armas-elemento-nombre">${arma.nombre}</p>
+        <section>
+            <p class="armas-elemento-nombre">${arma.nombre}</p>
+            <img src='${arma.img}' class="fusiles-asalto-elemento-img">
+        </section>
         <button class="button-base" data-arma="${arma.nombre}"></button>
-        <button class="button-oro" data-arma="${arma.nombre}" disabled></button>
-        <button class="button-plat" data-arma="${arma.nombre}" categoria="${arma.tipo}" disabled></button>
-        <button class="button-poli" data-arma="${arma.nombre}" disabled></button>
+        <button class="button-oro" data-arma="${arma.nombre}" data-hover="Recuerda que primero debes desbloquear todos los camuflajes base para poder desbloquear el desafío de Oro" disabled></button>
+        <button class="button-plat" data-arma="${arma.nombre}" categoria="${arma.tipo}" data-hover="Recuerda que primero debes desbloquear el camuflaje Oro en 4 lanzacohetes para poder desbloquear el desafío de Platino" disabled></button>
+        <button class="button-poli" data-arma="${arma.nombre}" data-hover="Recuerda que primero debes desbloquear el camuflaje Platino en 51 armas para poder desbloquear el desafío de Poliatómico" disabled></button>
         `
-        launchersImg.innerHTML = `<img src='${arma.img}' class='fusiles-asalto-elemento-img'>`
 
         launchers.className = 'fusiles-asalto-elemento'
 
@@ -215,13 +215,15 @@ armas.forEach((arma)=>{
         const meleeImg = document.createElement('div')
 
         melee.innerHTML = `
-        <p class="armas-elemento-nombre">${arma.nombre}</p>
+        <section>
+            <p class="armas-elemento-nombre">${arma.nombre}</p>
+            <img src='${arma.img}' class="fusiles-asalto-elemento-img">
+        </section>
         <button class="button-base" data-arma="${arma.nombre}"></button>
-        <button class="button-oro" data-arma="${arma.nombre}" disabled></button>
-        <button class="button-plat" data-arma="${arma.nombre}" categoria="${arma.tipo}" disabled></button>
-        <button class="button-poli" data-arma="${arma.nombre}" disabled></button>
+        <button class="button-oro" data-arma="${arma.nombre}" data-hover="Recuerda que primero debes desbloquear todos los camuflajes base para poder desbloquear el desafío de Oro" disabled></button>
+        <button class="button-plat" data-arma="${arma.nombre}" categoria="${arma.tipo}" data-hover="Recuerda que primero debes desbloquear el camuflaje Oro en 2 armas cuerpo a cuerpo para poder desbloquear el desafío de Platino" disabled></button>
+        <button class="button-poli" data-arma="${arma.nombre}" data-hover="Recuerda que primero debes desbloquear el camuflaje Platino en 51 armas para poder desbloquear el desafío de Poliatómico" disabled></button>
         `
-        meleeImg.innerHTML = `<img src='${arma.img}' class='fusiles-asalto-elemento-img'>`
 
         melee.className = 'fusiles-asalto-elemento'
 
@@ -260,6 +262,7 @@ for(let i = 0; i < buttonsBase.length; i++) {
         console.log(armas)
         armasBase = armas.filter(arma => arma.desafiosBase === true)
         console.log (armasBase)
+        buttonsBase[i].disabled = true
     })
 }
 
@@ -366,15 +369,16 @@ for(let i = 0; i < buttonsPlat.length; i++) {
         console.log(buttonsPoliArr)
         
         if(buttonsPoliArr.length >= 51){
-            for(let j = 0; j < buttonsPoliArr.length; j++)
-            buttonsPoliArr[j].disabled = false
+            for(let j = 0; j < buttonsPoliArr.length; j++){
+                buttonsPoliArr[j].disabled = false
+            }
         }
     })
 }
 
 for(let i = 0; i < buttonsPlat.length; i++) {
     buttonsPoli[i].addEventListener('click', () => {
-        buttonsPoli[i].classList.toggle('button-plat-clicked')
+        buttonsPoli[i].classList.toggle('button-poli-clicked')
         const nombreArma = buttonsPoli[i].getAttribute('data-arma')
         const indexArma = armas.findIndex(arma => arma.nombre === nombreArma)
         armas[indexArma].poli = true
@@ -382,141 +386,6 @@ for(let i = 0; i < buttonsPlat.length; i++) {
         armasPoli = armas.filter(arma => arma.poli === true)
         console.log (armasPoli)
         armasImg[indexArma].setAttribute('src', `${armas[indexArma].imgPoli}`)
-        
-        if(armasPoli.length >= 51){
-            for(let j = 0; j < buttonsPoliArr.length; j++)
-            armasImg[j].setAttribute('src', `${armas[j].imgOrion}`)
-        }
     })
 }
 
-
-
-// function test(){
-//     const armasConDesafiosBase = filtrarPorDesafiosBase(armas)
-//     console.log(armasConDesafiosBase)
-// }
-
-//función para preguntar nombre de usuario o correo al user
-// function preguntarUsuario(){
-//     // let usuario = prompt('Ingresa tu correo o nombre de usuario.')
-
-//     //Correo válido para el simulador: juanvargas@gmail.com || Usuario válido para el simulador: juanvargas98
-//     if(usuario === 'juanvargas@gmail.com' || usuario === 'juanvargas98'){
-//         preguntarContrasena()
-//     } else{
-//         alert('Correo o usuario inválidos, inténtalo nuevamente.')
-//         preguntarUsuario()
-//     }
-// }
-
-// //función para preguntar contraseña al user
-// function preguntarContrasena(){
-//     // let password = prompt('Ingresa tu contraseña.')
-
-//     while(password !== '1234' && intentos <3){
-//         alert('Contraseña equivocada, intente nuevamente')
-//         intentos++
-//         // password = prompt('Ingresa tu contraseña.')
-//     }
-    
-//     if(intentos === 3){
-//         alert('Excediste el límite de intentos. \nPor favor vuelve más tarde.')
-//     } else if(password === '1234'){
-//         alert('Bienvenido Juan')
-//         preguntarBase()
-//     }
-// }
-
-// preguntarUsuario()
-
-
-// function preguntarBase(){
-//     armas.forEach((arma) =>{
-//         // let base = Number(prompt(`¿Cuántos camuflajes base has desbloqueado de ${arma.nombre}?\n(Intoduce un número entre 0 y 4)`))
-//         if(base <= 4){
-//             arma.desafiosBase = base
-//         } else{
-//             alert('Cantidad no válida')
-//         }
-//     })
-//     //Se crea un arreglo que almacena las armas en las que se completaron los 4 camuflajes base y por ende ya tienen disponible el desafío de Oro
-//     armasOroDisponible = armas.filter(arma => arma.desafiosBase === 4)
-//     console.log(armasOroDisponible)
-//     if(armasOroDisponible.length === 0){
-//         alert('Recuerda que debes desbloquear los 4 camuflajes base de cada arma para desbloquear los desafíos de Oro')
-//     } else{
-//         preguntarOro()
-//     }
-// }
-
-
-// function preguntarOro(){
-//     armasOroDisponible.forEach((arma) =>{
-//         // let oro = prompt(`¿Ya desbloqueaste el camuflaje Oro de ${arma.nombre}?\n(Escribe SI o NO)`)
-//         if(oro === 'SI'){
-//             arma.oro = true
-//         }
-//         //Se filtran las armas que ya completaron el camuflaje Oro, para más adelante verificar si se cumplen los requerimientos para desbloquear el desafío de Platino
-//         oroArCompleto = rifles.filter(rifle => rifle.oro === true)
-//         oroSmgCompleto = subfusiles.filter(subfusil => subfusil.oro === true)
-//         oroLmgCompleto = ametralladoras.filter(ametralladora => ametralladora.oro === true)
-//     })
-//     console.log(oroArCompleto)
-//     console.log(oroSmgCompleto)
-//     console.log(oroLmgCompleto)
-
-//     if(oroArCompleto.length === 5 || oroSmgCompleto.length === 4 || oroLmgCompleto.length === 4){
-//         preguntarPlatino()
-//     } else{
-//         alert('Recuerda que debes cumplir los requerimientos del camuflaje Oro para desbloquear los desafíos de Platino')
-//     }
-// }
-
-// function preguntarPlatino(){  
-//     oroArCompleto.forEach((rifle) => {
-//         // let platinoAr = prompt(`¿Ya desbloqueaste el camuflaje Platino de ${rifle.nombre}?\n(Escribe SI o NO)`)
-//         if(platinoAr === 'SI'){
-//             rifle.platino = true
-//         }
-//     })
-//     oroSmgCompleto.forEach((subfusil) => {
-//         // let platinoSmg = prompt(`¿Ya desbloqueaste el camuflaje Platino de ${subfusil.nombre}?\n(Escribe SI o NO)`)
-//         if(platinoSmg === 'SI'){
-//             subfusil.platino = true
-//         }
-//     })
-//     oroLmgCompleto.forEach((ametralladora) => {
-//         // let platinoLmg = prompt(`¿Ya desbloqueaste el camuflaje Platino de ${ametralladora.nombre}?\n(Escribe SI o NO)`)
-//         if(platinoLmg === 'SI'){
-//             ametralladora.platino = true
-//         }
-//     })
-//     //Se filtran las armas que ya completaron el camuflaje de Platino, para más adelante verificar si se cumplen los requerimientos para desbloquear el desafío de Poliatómico
-//     armasPoliDisponible = armas.filter(arma => arma.platino === true)
-//     console.log(armasPoliDisponible)
-//     if(armasPoliDisponible.length === 13){
-//         preguntarPoli()
-//     } else{
-//         alert('Recuerda que debes completar 13 camuflajes de Platino para desbloquear los desafíos de Poliatómico')
-//     }
-// }
-
-// function preguntarPoli(){
-//     armasPoliDisponible.forEach((arma) =>{
-//         // let poli = prompt(`¿Ya desbloqueaste el camuflaje Poliatómico de ${arma.nombre}?\n(Escribe SI o NO)`)
-//         if(poli === 'SI'){
-//             arma.poli = true
-//         }
-//     })
-//     //Se filtran las armas que ya desbloquearon todos los camuflajes, para más adelante verificar si se cumplen los requerimientos para desbloquear Orion
-//     armasCompletadas = armas.filter(arma => arma.poli === true)
-//     console.log(armasCompletadas)
-//     if(armasCompletadas.length === 13){
-//         completionist()
-//     }
-// }
-
-// function completionist(){
-//     alert('¡FELICIDADES! Has completado todos los camuflajes y has desbloqueado Orion')
-// }
