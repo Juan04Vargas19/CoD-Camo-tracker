@@ -52,6 +52,21 @@ nav{
     font-size: 25px;
 }
 
+#reset-button{
+    background: #d7a224;
+    color: #e81414;
+    width: 145px;
+    font-size: 25px;
+    height: 55px;
+    -webkit-text-stroke: 0.3px black;
+    border-radius: 10px;
+    cursor: pointer;
+    position: fixed;
+    top: 90%;
+    left: 90%;
+}
+
+
 #main-orion{
     border: #D8E9A8 1px solid;
     margin: 0 50px;

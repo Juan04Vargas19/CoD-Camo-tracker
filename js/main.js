@@ -240,18 +240,6 @@ for (let i = 0; i < q.length; i++) {
     })    
 }
 
-//Separar los array por tipo de arma para verificar si se cumplen requerimientos para desbloquear el desafío de Platino
-const fusilesAsaltoArr = armas.filter(arma => arma.tipo === 'AR')
-const fusilesCombateArr = armas.filter(arma => arma.tipo === 'BR')
-const subfusilesArr = armas.filter(arma => arma.tipo === 'SMG')
-const escopetasArr = armas.filter(arma => arma.tipo === 'shotgun')
-const ametralladorasArr = armas.filter(arma => arma.tipo === 'LMG')
-const fusilestTactArr = armas.filter(arma => arma.tipo === 'markR')
-const snipersArr = armas.filter(arma => arma.tipo === 'snpr')
-const pistolArr = armas.filter(arma => arma.tipo === 'pistol')
-const launcherArr = armas.filter(arma => arma.tipo === 'rckt')
-const meleeArr = armas.filter(arma => arma.tipo === 'melee')
-
 for(let i = 0; i < buttonsBase.length; i++) {
     buttonsBase[i].addEventListener('click', () => {
         buttonsBase[i].classList.toggle('button-base-clicked')
@@ -259,10 +247,10 @@ for(let i = 0; i < buttonsBase.length; i++) {
         const indexArma = armas.findIndex(arma => arma.nombre === nombreArma)
         armas[indexArma].desafiosBase = true
         buttonsOro[indexArma].disabled = false
-        console.log(armas)
         armasBase = armas.filter(arma => arma.desafiosBase === true)
-        console.log (armasBase)
         buttonsBase[i].disabled = true
+
+        localStorage.setItem('armas', JSON.stringify(armas))
     })
 }
 
@@ -274,10 +262,9 @@ for(let i = 0; i < buttonsOro.length; i++) {
         const indexArma = armas.findIndex(arma => arma.nombre === nombreArma)
         armas[indexArma].oro = true
         armasImg[indexArma].setAttribute('src', `${armas[indexArma].imgOro}`)
-        console.log(armas)
         armasOro = armas.filter(arma => arma.oro === true)
-        console.log (armasOro)
         const buttonsPlatSec = buttonsPlat[i].getAttribute('categoria')
+        buttonsOro[i].disabled = true
         if(buttonsPlatSec === 'AR'){
             buttonsPlatAr.push(buttonsPlat[i])
         } else if(buttonsPlatSec === 'BR'){
@@ -299,7 +286,6 @@ for(let i = 0; i < buttonsOro.length; i++) {
         }else if(buttonsPlatSec === 'melee'){
             buttonsPlatMelee.push(buttonsPlat[i])
         }
-        console.log(buttonsPlatAr)
 
         if(buttonsPlatAr.length >= 8){
             for(let j = 0; j < buttonsPlatAr.length; j++)
@@ -359,14 +345,11 @@ for(let i = 0; i < buttonsPlat.length; i++) {
         const nombreArma = buttonsPlat[i].getAttribute('data-arma')
         const indexArma = armas.findIndex(arma => arma.nombre === nombreArma)
         armas[indexArma].platino = true
-        console.log(armas)
         armasPlat = armas.filter(arma => arma.platino === true)
-        console.log (armasPlat)
+        buttonsPlat[i].disabled = true
         armasImg[indexArma].setAttribute('src', `${armas[indexArma].imgPlat}`)
 
         buttonsPoliArr.push(buttonsPoli[i])
-
-        console.log(buttonsPoliArr)
         
         if(buttonsPoliArr.length >= 51){
             for(let j = 0; j < buttonsPoliArr.length; j++){
@@ -376,16 +359,48 @@ for(let i = 0; i < buttonsPlat.length; i++) {
     })
 }
 
-for(let i = 0; i < buttonsPlat.length; i++) {
+for(let i = 0; i < buttonsPoli.length; i++) {
     buttonsPoli[i].addEventListener('click', () => {
         buttonsPoli[i].classList.toggle('button-poli-clicked')
         const nombreArma = buttonsPoli[i].getAttribute('data-arma')
         const indexArma = armas.findIndex(arma => arma.nombre === nombreArma)
         armas[indexArma].poli = true
-        console.log(armas)
         armasPoli = armas.filter(arma => arma.poli === true)
-        console.log (armasPoli)
+        buttonsPoli[i].disabled = true
         armasImg[indexArma].setAttribute('src', `${armas[indexArma].imgPoli}`)
     })
+}
+
+
+
+function reset(){
+    for(let i = 0; i < armas.length; i++){
+        buttonsBase[i].setAttribute('class', 'button-base')
+        buttonsOro[i].setAttribute('class', 'button-oro')
+        buttonsPlat[i].setAttribute('class', 'button-plat')
+        buttonsPoli[i].setAttribute('class', 'button-poli')
+        buttonsPlatAr = []
+        buttonsPlatBr = []
+        buttonsPlatSmg = []
+        buttonsPlatShotgun = []
+        buttonsPlatLmg = []
+        buttonsPlatMarkR = []
+        buttonsPlatSnpr = []
+        buttonsPlatPistol = []
+        buttonsPlatRckt = []
+        buttonsPlatMelee = []
+        buttonsPoliArr = []
+        buttonsBase[i].disabled = false
+        buttonsOro[i].disabled = true
+        buttonsPlat[i].disabled = true
+        buttonsPoli[i].disabled = true
+
+        armas[i].desafiosBase = false
+        armas[i].oro = false
+        armas[i].platino = false
+        armas[i].poli = false
+
+        armasImg[i].setAttribute('src', `${armas[i].img}`)
+    }
 }
 
