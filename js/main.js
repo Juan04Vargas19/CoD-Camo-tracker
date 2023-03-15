@@ -36,6 +36,18 @@ let buttonsPlatRckt = []
 let buttonsPlatMelee = []
 let buttonsPoliArr = []
 
+let executedAr = false
+let executedBr = false
+let executedSmg = false
+let executedShotgun = false
+let executedLmg = false
+let executedMarkR = false
+let executedSnpr = false
+let executedPistol = false
+let executedRckt = false
+let executedMelee = false
+let executedPoli = false
+
 //Insertar cada elemento del documento array.js en el DOM
 armas.forEach((arma)=>{
     if(arma.tipo === 'AR'){
@@ -244,6 +256,17 @@ obtenerLS()
 
 function obtenerLS(){
     const armasEnLS = JSON.parse(localStorage.getItem('armas'))
+    const executedArEnLS = localStorage.getItem('executedAr')
+    const executedBrEnLS = localStorage.getItem('executedBr')
+    const executedSmgEnLS = localStorage.getItem('executedSmg')
+    const executedShotgunEnLS = localStorage.getItem('executedShotgun')
+    const executedLmgEnLS = localStorage.getItem('executedLmg')
+    const executedMarkREnLS = localStorage.getItem('executedMarkr')
+    const executedSnprEnLS = localStorage.getItem('executedSnpr')
+    const executedPistolEnLS = localStorage.getItem('executedPistol')
+    const executedRcktEnLS = localStorage.getItem('executedRckt')
+    const executedMeleeEnLS = localStorage.getItem('executedMelee')
+    const executedPoliEnLS = localStorage.getItem('executedPoli')
 
     if(armasEnLS === null){
         console.log('Bienvenid@. Tu espacio en LocalStorage para esta app está vacío, puedes ignorar este mensaje :D')
@@ -368,6 +391,19 @@ function obtenerLS(){
             }
         }
     }
+    executedArEnLS === 'true' ? executedAr = true : executedAr = false
+    console.log(executedArEnLS)
+    console.log(executedAr)
+    executedBrEnLS === 'true' ? executedBr = true : executedBr = false
+    executedSmgEnLS === 'true' ? executedSmg = true : executedSmg = false
+    executedShotgunEnLS === 'true' ? executedShotgun = true : executedShotgun = false
+    executedLmgEnLS === 'true' ? executedLmg = true : executedLmg = false
+    executedMarkREnLS === 'true' ? executedMarkR = true : executedMarkR = false
+    executedSnprEnLS === 'true' ? executedSnpr = true : executedSnpr = false
+    executedPistolEnLS === 'true' ? executedPistol = true : executedPistol = false
+    executedRcktEnLS === 'true' ? executedRckt = true : executedRckt = false
+    executedMeleeEnLS === 'true' ? executedMelee = true : executedMelee = false
+    executedPoliEnLS === 'true' ? executedPoli = true : executedMelee = false
 }
 
 //Eventos e interactividad con la página
@@ -418,53 +454,233 @@ for(let i = 0; i < buttonsOro.length; i++) {
         }
 
         if(buttonsPlatAr.length >= 8){
-            for(let j = 0; j < buttonsPlatAr.length; j++)
-            buttonsPlatAr[j].disabled = false
+            for(let j = 0; j < buttonsPlatAr.length; j++){
+                buttonsPlatAr[j].disabled = false
+            }
+            let toastAr = (function() {
+                return function() {
+                    if (!executedAr) {
+                        executedAr = true;
+                        localStorage.setItem('executedAr', executedAr)
+                        Toastify({
+                            text: 'Has desbloqueado el desafio de platino para los fusiles de asalto',
+                            duration: 5000,
+                            style: {
+                                background: "linear-gradient(90deg, rgba(222,196,137,1) 7%, rgba(246,224,164,1) 14%, rgba(209,179,114,1) 22%, rgba(227,204,151,1) 35%, rgba(191,154,94,1) 50%, rgba(227,204,151,1) 65%, rgba(209,179,114,1) 77%, rgba(246,224,164,1) 85%, rgba(222,196,137,1) 93%)",
+                                color: "#000",
+                            }
+                        }).showToast()
+                    }
+                }
+            })()
+            toastAr()
         }
 
         if(buttonsPlatBr.length >= 4){
-            for(let j = 0; j < buttonsPlatBr.length; j++)
-            buttonsPlatBr[j].disabled = false
+            for(let j = 0; j < buttonsPlatBr.length; j++){
+                buttonsPlatBr[j].disabled = false
+            }
+            let toastBr = (function() {
+                return function() {
+                    if (!executedBr) {
+                        executedBr = true;
+                        localStorage.setItem('executedBr', executedBr)
+                        Toastify({
+                            text: 'Has desbloqueado el desafio de platino para los fusiles de combate',
+                            duration: 5000,
+                            style: {
+                                background: "linear-gradient(90deg, rgba(222,196,137,1) 7%, rgba(246,224,164,1) 14%, rgba(209,179,114,1) 22%, rgba(227,204,151,1) 35%, rgba(191,154,94,1) 50%, rgba(227,204,151,1) 65%, rgba(209,179,114,1) 77%, rgba(246,224,164,1) 85%, rgba(222,196,137,1) 93%)",
+                                color: "#000",
+                            }
+                        }).showToast()
+                    }
+                }
+            })()
+            toastBr()
         }
 
         if(buttonsPlatSmg.length >= 8){
-            for(let j = 0; j < buttonsPlatSmg.length; j++)
-            buttonsPlatSmg[j].disabled = false
+            for(let j = 0; j < buttonsPlatSmg.length; j++){
+                buttonsPlatSmg[j].disabled = false
+            }
+            let toastSmg = (function() {
+                return function() {
+                    if (!executedSmg) {
+                        executedSmg = true;
+                        localStorage.setItem('executedSmg', executedSmg)
+                        Toastify({
+                            text: 'Has desbloqueado el desafio de platino para los subfusiles',
+                            duration: 5000,
+                            style: {
+                                background: "linear-gradient(90deg, rgba(222,196,137,1) 7%, rgba(246,224,164,1) 14%, rgba(209,179,114,1) 22%, rgba(227,204,151,1) 35%, rgba(191,154,94,1) 50%, rgba(227,204,151,1) 65%, rgba(209,179,114,1) 77%, rgba(246,224,164,1) 85%, rgba(222,196,137,1) 93%)",
+                                color: "#000",
+                            }
+                        }).showToast()
+                    }
+                }
+            })()
+            toastSmg()
         }
 
         if(buttonsPlatShotgun.length >= 4){
-            for(let j = 0; j < buttonsPlatShotgun.length; j++)
-            buttonsPlatShotgun[j].disabled = false
+            for(let j = 0; j < buttonsPlatShotgun.length; j++){
+                buttonsPlatShotgun[j].disabled = false
+            }
+            let toastShotgun = (function() {
+                return function() {
+                    if (!executedShotgun) {
+                        executedShotgun = true;
+                        localStorage.setItem('executedShotgun', executedShotgun)
+                        Toastify({
+                            text: 'Has desbloqueado el desafio de platino para las escopetas',
+                            duration: 5000,
+                            style: {
+                                background: "linear-gradient(90deg, rgba(222,196,137,1) 7%, rgba(246,224,164,1) 14%, rgba(209,179,114,1) 22%, rgba(227,204,151,1) 35%, rgba(191,154,94,1) 50%, rgba(227,204,151,1) 65%, rgba(209,179,114,1) 77%, rgba(246,224,164,1) 85%, rgba(222,196,137,1) 93%)",
+                                color: "#000",
+                            }
+                        }).showToast()
+                    }
+                }
+            })()
+            toastShotgun()
         }
 
         if(buttonsPlatLmg.length >= 6){
-            for(let j = 0; j < buttonsPlatLmg.length; j++)
-            buttonsPlatLmg[j].disabled = false
+            for(let j = 0; j < buttonsPlatLmg.length; j++){
+                buttonsPlatLmg[j].disabled = false
+            }
+            let toastLmg = (function() {
+                return function() {
+                    if (!executedLmg) {
+                        executedLmg = true;
+                        localStorage.setItem('executedLmg', executedLmg)
+                        Toastify({
+                            text: 'Has desbloqueado el desafio de platino para las ametralladoras',
+                            duration: 5000,
+                            style: {
+                                background: "linear-gradient(90deg, rgba(222,196,137,1) 7%, rgba(246,224,164,1) 14%, rgba(209,179,114,1) 22%, rgba(227,204,151,1) 35%, rgba(191,154,94,1) 50%, rgba(227,204,151,1) 65%, rgba(209,179,114,1) 77%, rgba(246,224,164,1) 85%, rgba(222,196,137,1) 93%)",
+                                color: "#000",
+                            }
+                        }).showToast()
+                    }
+                }
+            })()
+            toastLmg()
         }
 
         if(buttonsPlatMarkR.length >= 6){
-            for(let j = 0; j < buttonsPlatMarkR.length; j++)
-            buttonsPlatMarkR[j].disabled = false
+            for(let j = 0; j < buttonsPlatMarkR.length; j++){
+                buttonsPlatMarkR[j].disabled = false
+            }
+            let toastMarkR = (function() {
+                return function() {
+                    if (!executedMarkR) {
+                        executedMarkR = true;
+                        localStorage.setItem('executedMarkR', executedMarkR)
+                        Toastify({
+                            text: 'Has desbloqueado el desafio de platino para los fusiles de tácticos',
+                            duration: 5000,
+                            style: {
+                                background: "linear-gradient(90deg, rgba(222,196,137,1) 7%, rgba(246,224,164,1) 14%, rgba(209,179,114,1) 22%, rgba(227,204,151,1) 35%, rgba(191,154,94,1) 50%, rgba(227,204,151,1) 65%, rgba(209,179,114,1) 77%, rgba(246,224,164,1) 85%, rgba(222,196,137,1) 93%)",
+                                color: "#000",
+                            }
+                        }).showToast()
+                    }
+                }
+            })()
+            toastMarkR()
         }
 
         if(buttonsPlatSnpr.length >= 4){
-            for(let j = 0; j < buttonsPlatSnpr.length; j++)
-            buttonsPlatSnpr[j].disabled = false
+            for(let j = 0; j < buttonsPlatSnpr.length; j++){
+                buttonsPlatSnpr[j].disabled = false
+            }
+            let toastSnpr = (function() {
+                return function() {
+                    if (!executedSnpr) {
+                        executedSnpr = true;
+                        localStorage.setItem('executedSnpr', executedSnpr)
+                        Toastify({
+                            text: 'Has desbloqueado el desafio de platino para los snipers',
+                            duration: 5000,
+                            style: {
+                                background: "linear-gradient(90deg, rgba(222,196,137,1) 7%, rgba(246,224,164,1) 14%, rgba(209,179,114,1) 22%, rgba(227,204,151,1) 35%, rgba(191,154,94,1) 50%, rgba(227,204,151,1) 65%, rgba(209,179,114,1) 77%, rgba(246,224,164,1) 85%, rgba(222,196,137,1) 93%)",
+                                color: "#000",
+                            }
+                        }).showToast()
+                    }
+                }
+            })()
+            toastSnpr()
         }
 
         if(buttonsPlatPistol.length >= 5){
-            for(let j = 0; j < buttonsPlatPistol.length; j++)
-            buttonsPlatPistol[j].disabled = false
+            for(let j = 0; j < buttonsPlatPistol.length; j++){
+                buttonsPlatPistol[j].disabled = false
+            }
+            let toastPistol = (function() {
+                return function() {
+                    if (!executedPistol) {
+                        executedPistol = true;
+                        localStorage.setItem('executedPistol', executedPistol)
+                        Toastify({
+                            text: 'Has desbloqueado el desafio de platino para las pistolas',
+                            duration: 5000,
+                            style: {
+                                background: "linear-gradient(90deg, rgba(222,196,137,1) 7%, rgba(246,224,164,1) 14%, rgba(209,179,114,1) 22%, rgba(227,204,151,1) 35%, rgba(191,154,94,1) 50%, rgba(227,204,151,1) 65%, rgba(209,179,114,1) 77%, rgba(246,224,164,1) 85%, rgba(222,196,137,1) 93%)",
+                                color: "#000",
+                            }
+                        }).showToast()
+                    }
+                }
+            })()
+            toastPistol()
         }
 
         if(buttonsPlatRckt.length >= 4){
-            for(let j = 0; j < buttonsPlatRckt.length; j++)
-            buttonsPlatRckt[j].disabled = false
+            for(let j = 0; j < buttonsPlatRckt.length; j++){
+                buttonsPlatRckt[j].disabled = false
+            }
+            let toastRckt = (function() {
+                return function() {
+                    if (!executedRckt) {
+                        executedRckt = true;
+                        localStorage.setItem('executedRckt', executedRckt)
+                        Toastify({
+                            text: 'Has desbloqueado el desafio de platino para los fusiles lanzacohetes',
+                            duration: 5000,
+                            style: {
+                                background: "linear-gradient(90deg, rgba(222,196,137,1) 7%, rgba(246,224,164,1) 14%, rgba(209,179,114,1) 22%, rgba(227,204,151,1) 35%, rgba(191,154,94,1) 50%, rgba(227,204,151,1) 65%, rgba(209,179,114,1) 77%, rgba(246,224,164,1) 85%, rgba(222,196,137,1) 93%)",
+                                color: "#000",
+                            }
+                        }).showToast()
+                    }
+                }
+            })()
+            toastRckt()
         }
 
         if(buttonsPlatMelee.length >= 2){
-            for(let j = 0; j < buttonsPlatMelee.length; j++)
-            buttonsPlatMelee[j].disabled = false
+            for(let j = 0; j < buttonsPlatMelee.length; j++){
+                buttonsPlatMelee[j].disabled = false
+            }
+            let toastMelee = (function() {
+                return function() {
+                    if (!executedMelee) {
+                        executedMelee = true;
+                        localStorage.setItem('executedMelee', executedMelee)
+                        Toastify({
+                            text: 'Has desbloqueado el desafio de platino para los cuerpo a cuerpo',
+                            duration: 5000,
+                            style: {
+                                background: "linear-gradient(90deg, rgba(222,196,137,1) 7%, rgba(246,224,164,1) 14%, rgba(209,179,114,1) 22%, rgba(227,204,151,1) 35%, rgba(191,154,94,1) 50%, rgba(227,204,151,1) 65%, rgba(209,179,114,1) 77%, rgba(246,224,164,1) 85%, rgba(222,196,137,1) 93%)",
+                                color: "#000",
+                            }
+                        }).showToast()
+                    }
+                }
+            })()
+            toastMelee()
         }
 
         localStorage.setItem('armas', JSON.stringify(armas))
@@ -488,6 +704,23 @@ for(let i = 0; i < buttonsPlat.length; i++) {
         if(buttonsPoliArr.length >= 51){
             for(let j = 0; j < buttonsPoliArr.length; j++){
                 buttonsPoliArr[j].disabled = false
+                let toastPoli = (function() {
+                    return function() {
+                        if (!executedPoli) {
+                            executedPoli = true;
+                            localStorage.setItem('executedPoli', executedPoli)
+                            Toastify({
+                                text: 'Has desbloqueado el desafio de poliatómico',
+                                duration: 5000,
+                                style: {
+                                    background: "linear-gradient(90deg, rgba(120,120,120,1) 0%, rgba(181,181,181,1) 15%, rgba(227,227,227,1) 25%, rgba(181,181,181,1) 35%, rgba(120,120,120,1) 50%, rgba(181,181,181,1) 65%, rgba(227,227,227,1) 75%, rgba(181,181,181,1) 85%, rgba(120,120,120,1) 100%)",
+                                    color: "#000",
+                                }
+                            }).showToast()
+                        }
+                    }
+                })()
+                toastPoli()
             }
         }
     })
@@ -503,39 +736,87 @@ for(let i = 0; i < buttonsPoli.length; i++) {
         localStorage.setItem('armas', JSON.stringify(armas))
         buttonsPoli[i].disabled = true
         armasImg[indexArma].setAttribute('src', `${armas[indexArma].imgPoli}`)
+
+        if(armasPoli.length === 51){
+            Swal.fire({
+                title: '¡Felicidades!',
+                text: 'Has desbloqueado Orión.',
+                background: 'url(https://wzhub.gg/images/camo/orion.jpg)',
+                color: '#fff',
+                confirmButtonText: ':D',
+            })
+        }
     })
 }
 
 //Función implementada para resolver temporalmente un bug en el que al darle click nuevamente a los botones de los camuflajes se repetían en sus array correspondientes 
 function reset(){
-    for(let i = 0; i < armas.length; i++){
-        buttonsBase[i].setAttribute('class', 'button-base')
-        buttonsOro[i].setAttribute('class', 'button-oro')
-        buttonsPlat[i].setAttribute('class', 'button-plat')
-        buttonsPoli[i].setAttribute('class', 'button-poli')
-        buttonsPlatAr = []
-        buttonsPlatBr = []
-        buttonsPlatSmg = []
-        buttonsPlatShotgun = []
-        buttonsPlatLmg = []
-        buttonsPlatMarkR = []
-        buttonsPlatSnpr = []
-        buttonsPlatPistol = []
-        buttonsPlatRckt = []
-        buttonsPlatMelee = []
-        buttonsPoliArr = []
-        buttonsBase[i].disabled = false
-        buttonsOro[i].disabled = true
-        buttonsPlat[i].disabled = true
-        buttonsPoli[i].disabled = true
+    Swal.fire({
+        title: '¿Estás seguro que quieres resetear tu progreso?',
+        showDenyButton: true,
+        confirmButtonText: 'Estoy seguro',
+        denyButtonText: `Cancelar`,
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+          Swal.fire('Progreso reseteado', '', 'success')
+          for(let i = 0; i < armas.length; i++){
+            buttonsBase[i].setAttribute('class', 'button-base')
+            buttonsOro[i].setAttribute('class', 'button-oro')
+            buttonsPlat[i].setAttribute('class', 'button-plat')
+            buttonsPoli[i].setAttribute('class', 'button-poli')
+            buttonsPlatAr = []
+            buttonsPlatBr = []
+            buttonsPlatSmg = []
+            buttonsPlatShotgun = []
+            buttonsPlatLmg = []
+            buttonsPlatMarkR = []
+            buttonsPlatSnpr = []
+            buttonsPlatPistol = []
+            buttonsPlatRckt = []
+            buttonsPlatMelee = []
+            buttonsPoliArr = []
+            buttonsBase[i].disabled = false
+            buttonsOro[i].disabled = true
+            buttonsPlat[i].disabled = true
+            buttonsPoli[i].disabled = true
+    
+            armas[i].desafiosBase = false
+            armas[i].oro = false
+            armas[i].platino = false
+            armas[i].poli = false
+    
+            executedAr = false
+            executedBr = false
+            executedSmg = false
+            executedShotgun = false
+            executedLmg = false
+            executedMarkR = false
+            executedSnpr = false
+            executedPistol = false
+            executedRckt = false
+            executedMelee = false
+            executedPoli = false
+    
+            armasImg[i].setAttribute('src', `${armas[i].img}`)
+    
+            localStorage.removeItem('armas')
 
-        armas[i].desafiosBase = false
-        armas[i].oro = false
-        armas[i].platino = false
-        armas[i].poli = false
-
-        armasImg[i].setAttribute('src', `${armas[i].img}`)
-
-        localStorage.removeItem('armas')
-    }
+            localStorage.removeItem('executedAr')
+            localStorage.removeItem('executedBr')
+            localStorage.removeItem('executedSmg')
+            localStorage.removeItem('executedShotgun')
+            localStorage.removeItem('executedLmg')
+            localStorage.removeItem('executedMarkR')
+            localStorage.removeItem('executedSnpr')
+            localStorage.removeItem('executedPistol')
+            localStorage.removeItem('executedRckt')
+            localStorage.removeItem('executedMelee')
+            localStorage.removeItem('executedPoli')
+        }
+        } else if (result.isDenied) {
+          Swal.fire('Reseteo cancelado', '', 'info')
+        }
+    })
+    
 }
