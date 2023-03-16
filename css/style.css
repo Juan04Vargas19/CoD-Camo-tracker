@@ -8,19 +8,31 @@
 
 body{
     font-family: 'Alef', sans-serif;
-    font-family: 'Sarala', sans-serif;    
+    font-family: 'Sarala', sans-serif; 
+}
+
+.dark{   
     background: #1a1a1a;
     color: white;
 }
 
-header{
+.light{
+    background: #9c9c9c;
+    color: #1a1a1a;
+}
+
+.header-dark{
     background: #000;
+}
+
+.header-light{
+    background: #555;
 }
 
 nav{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .navbar-title{
@@ -41,6 +53,35 @@ nav{
     font-size: 25px;
 }
 
+.btn-light{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-family: 'Alef', sans-serif;
+    background: #9c9c9c;
+}
+
+.btn-dark{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-family: 'Alef', sans-serif;
+    background: #3d3d3d;
+    color: white;
+}
+
+.lightmode-btn svg{
+    padding-left: 5px;
+}
+
+.lightmode-btn{
+    margin-right: 30px;
+    cursor: pointer;
+}
 
 .main-title{
     padding: 20px 30px;
@@ -226,8 +267,19 @@ nav{
     background-color: #4E9F3D;
 }
 
-footer{
+.footer-dark{
     background: #575757;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 150px;
+    padding: 0px 450px;
+    margin-top: 20px;
+    color: #000;
+}
+
+.footer-light{
+    background: #7d7d7d;
     display: flex;
     justify-content: space-around;
     align-items: center;

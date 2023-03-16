@@ -269,7 +269,7 @@ function obtenerLS(){
     const executedPoliEnLS = localStorage.getItem('executedPoli')
 
     if(armasEnLS === null){
-        console.log('Bienvenid@. Tu espacio en LocalStorage para esta app está vacío, puedes ignorar este mensaje :D')
+        console.log('Bienvenid@. Tu espacio en LocalStorage está vacío, puedes ignorar este mensaje :D')
     } else{
         armas = armasEnLS
         for(let i = 0; i < armasEnLS.length; i++){
@@ -392,8 +392,6 @@ function obtenerLS(){
         }
     }
     executedArEnLS === 'true' ? executedAr = true : executedAr = false
-    console.log(executedArEnLS)
-    console.log(executedAr)
     executedBrEnLS === 'true' ? executedBr = true : executedBr = false
     executedSmgEnLS === 'true' ? executedSmg = true : executedSmg = false
     executedShotgunEnLS === 'true' ? executedShotgun = true : executedShotgun = false
