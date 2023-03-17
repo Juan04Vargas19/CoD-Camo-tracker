@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoD Camo tracker | Rastrea el progreso de tus camuflajes en MW2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="dark">
+    <header class="header header-dark navbar-dark">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary navbar bg-dark" data-bs-theme="dark">
+            <div class="container-fluid">
+            <a class="navbar-brand navbar-title" href="../index.html">CoD Camo tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./tracker.html">Tracker</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Tips</a>
+                </li>
+                </ul>
+            </div>
+            </div>
+            <button class="lightmode-btn btn-light" title="activar lightmode"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 12c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3zm-3-5c.343 0 .677.035 1 .101v-3.101h-2v3.101c.323-.066.657-.101 1-.101zm-2.755.832l-2.195-2.196-1.414 1.414 2.195 2.195c.372-.561.853-1.042 1.414-1.413zm-2.245 4.168c0-.343.035-.677.101-1h-3.101v2h3.101c-.066-.323-.101-.657-.101-1zm9.169-2.754l2.195-2.195-1.414-1.415-2.195 2.195c.561.372 1.042.853 1.414 1.415zm.73 1.754c.066.323.101.657.101 1s-.035.677-.101 1h3.101v-2h-3.101zm-2.144 5.168l2.195 2.195 1.414-1.414-2.195-2.195c-.372.562-.853 1.043-1.414 1.414zm-6.924-1.414l-2.195 2.196 1.414 1.414 2.195-2.195c-.561-.372-1.042-.853-1.414-1.415zm4.169 2.246c-.343 0-.677-.035-1-.101v3.101h2v-3.101c-.323.066-.657.101-1 .101z"/></svg></button>
+        </nav>
+    </header>
+    <div class="loader">
+        <h2>Cargando...</h2>
+    </div>
+    <section id="main">
+        <ul class="armas">
+            <li class="armas-elemento">
+                <div class="q">
+                    <span class="arrow"></span>
+                    <span>Fusiles de asalto</span>
+                </div>
+                <div class="b">
+                    <span class="b-element"></span>
+                    <span class="b-element">Camuflajes base</span>
+                    <span class="b-element"><img src="https://api.wzhub.gg/storage/uploads/camouflages/gold.jpeg" alt="logo camuflaje Oro" title="camuflaje oro"></span>
+                    <span class="b-element"><img src="https://api.wzhub.gg/storage/uploads/camouflages/platinum.jpeg" alt="logo camuflaje Platino" title="camuflaje platino"></span>
+                    <span class="b-element"><img src="https://api.wzhub.gg/storage/uploads/camouflages/polyatomic.jpeg" alt="logo camuflaje Poliatómico" title="camuflaje poliatómico"></span>
+                </div>
+                <div class="a">
+                    <ul id="fusiles-asalto"></ul>
+                </div>
+            </li>
+            <li class="armas-elemento">
+                <div class="q">
+                    <span class="arrow"></span>
+                    <span>Fusiles de combate</span>
+                </div>
+                <div class="b">
+                    <span class="b-element"></span>
+                    <span class="b-element">Camuflajes base</span>
+                    <span class="b-element"><img src="https://api.wzhub.gg/storage/uploads/camouflages/gold.jpeg" alt="logo camuflaje Oro" title="camuflaje oro"></span>
+                    <span class="b-element"><img src="https://api.wzhub.gg/storage/uploads/camouflages/platinum.jpeg" alt="logo camuflaje Platino" title="camuflaje platino"></span>
+                    <span class="b-element"><img src="https://api.wzhub.gg/storage/uploads/camouflages/polyatomic.jpeg" alt="logo camuflaje Poliatómico" title="camuflaje poliatómico"></span>
+                </div>
+                <div class="a">
+                    <ul id="fusiles-combate"></ul>
+                </div>
+            </li>
+            <li class="armas-elemento">
+                <div class="q">
+                    <span class="arrow"></span>
+                    <span>Subfusiles</span>
+                </div>
+                <div class="b">
+                    <span class="b-element"></span>
+                    <span class="b-element">Camuflajes base</span>
+                    <span class="b-element"><img src="https://api.wzhub.gg/storage/uploads/camouflages/gold.jpeg" alt="logo camuflaje Oro" title="camuflaje oro"></span>
+                    <span class="b-element"><img src="https://api.wzhub.gg/storage/uploads/camouflages/platinum.jpeg" alt="logo camuflaje Platino" title="camuflaje platino"></span>
+                    <span class="b-element"><img src="https://api.wzhub.gg/storage/uploads/camouflages/polyatomic.jpeg" alt="logo camuflaje Poliatómico" title="camuflaje poliatómico"></span>
+                </div>
+                <div class="a">
+                    <ul id="subfusiles"></ul>
+                </div>
+            </li>
+            <li class="armas-elemento">
+                <div class="q">
+                    <span class="arrow"></span>
+                    <span>Escopetas</span>
+                </div>
+                <div class="b">
+                    <span class="b-element"></span>
+                    <span class="b-element">Camuflajes base</span>
+                    <span class="b-element"><img src="https://api.wzhub.gg/storage/uploads/camouflages/gold.jpeg" alt="logo camuflaje Oro" title="camuflaje oro"></span>
+                    <span class="b-element"><img src="https://api.wzhub.gg/storage/uploads/camouflages/platinum.jpeg" alt="logo camuflaje Platino" title="camuflaje platino"></span>
+                    <span class="b-element"><img src="https://api.wzhub.gg/storage/uploads/camouflages/polyatomic.jpeg" alt="logo camuflaje Poliatómico" title="camuflaje poliatómico"></span>
+                </div>
+                <div class="a">
+                    <ul id="escopetas"></ul>
+                </div>
+            </li>
+            <li class="armas-elemento">
+                <div class="q">
+                    <span class="arrow"></span>
+                    <span>Ametralladoras ligeras</span>
+                </div>
+                <div class="b">
+                    <span class="b-element"></span>
+                    <span class="b-element">Camuflajes base</span>
+                    <span class="b-element"><img src="https://api.wzhub.gg/storage/uploads/camouflages/gold.jpeg" alt="logo camuflaje Oro" title="camuflaje oro"></span>
+                    <span class="b-element"><img src="https://api.wzhub.gg/storage/uploads/camouflages/platinum.jpeg" alt="logo camuflaje Platino" title="camuflaje platino"></span>
+                    <span class="b-element"><img src="https://api.wzhub.gg/storage/uploads/camouflages/polyatomic.jpeg" alt="logo camuflaje Poliatómico" title="camuflaje poliatómico"></span>
+                </div>
+                <div class="a">
+                    <ul id="ametralladoras"></ul>
+                </div>
+            </li>
+            <li class="armas-elemento">
+                <div class="q">
+                    <span class="arrow"></span>
+                    <span>Fusiles tácticos</span>
+                </div>
+                <div class="b">
+                    <span class="b-element"></span>
+                    <span class="b-element">Camuflajes base</span>
+                    <span class="b-element"><img src="https://api.wzhub.gg/storage/uploads/camouflages/gold.jpeg" alt="logo camuflaje Oro" title="camuflaje oro"></span>
+                    <span class="b-element"><img src="https://api.wzhub.gg/storage/uploads/camouflages/platinum.jpeg" alt="logo camuflaje Platino" title="camuflaje platino"></span>
+                    <span class="b-element"><img src="https://api.wzhub.gg/storage/uploads/camouflages/polyatomic.jpeg" alt="logo camuflaje Poliatómico" title="camuflaje poliatómico"></span>
+                </div>
+                <div class="a">
+                    <ul id="fusiles-tact"></ul>
+                </div>
+            </li>
+            <li class="armas-elemento">
+                <div class="q">
+                    <span class="arrow"></span>
+                    <span>Snipers</span>
+                </div>
+                <div class="b">
+                    <span class="b-element"></span>
+                    <span class="b-element">Camuflajes base</span>
+                    <span class="b-element"><img src="https://api.wzhub.gg/storage/uploads/camouflages/gold.jpeg" alt="logo camuflaje Oro" title="camuflaje oro"></span>
+                    <span class="b-element"><img src="https://api.wzhub.gg/storage/uploads/camouflages/platinum.jpeg" alt="logo camuflaje Platino" title="camuflaje platino"></span>
+                    <span class="b-element"><img src="https://api.wzhub.gg/storage/uploads/camouflages/polyatomic.jpeg" alt="logo camuflaje Poliatómico" title="camuflaje poliatómico"></span>
+                </div>
+                <div class="a">
+                    <ul id="snipers"></ul>
+                </div>
+            </li>
+            <li class="armas-elemento">
+                <div class="q">
+                    <span class="arrow"></span>
+                    <span>Pistolas</span>
+                </div>
+                <div class="b">
+                    <span class="b-element"></span>
+                    <span class="b-element">Camuflajes base</span>
+                    <span class="b-element"><img src="https://api.wzhub.gg/storage/uploads/camouflages/gold.jpeg" alt="logo camuflaje Oro" title="camuflaje oro"></span>
+                    <span class="b-element"><img src="https://api.wzhub.gg/storage/uploads/camouflages/platinum.jpeg" alt="logo camuflaje Platino" title="camuflaje platino"></span>
+                    <span class="b-element"><img src="https://api.wzhub.gg/storage/uploads/camouflages/polyatomic.jpeg" alt="logo camuflaje Poliatómico" title="camuflaje poliatómico"></span>
+                </div>
+                <div class="a">
+                    <ul id="pistol"></ul>
+                </div>
+            </li>
+            <li class="armas-elemento">
+                <div class="q">
+                    <span class="arrow"></span>
+                    <span>Lanzacohetes</span>
+                </div>
+                <div class="b">
+                    <span class="b-element"></span>
+                    <span class="b-element">Camuflajes base</span>
+                    <span class="b-element"><img src="https://api.wzhub.gg/storage/uploads/camouflages/gold.jpeg" alt="logo camuflaje Oro" title="camuflaje oro"></span>
+                    <span class="b-element"><img src="https://api.wzhub.gg/storage/uploads/camouflages/platinum.jpeg" alt="logo camuflaje Platino" title="camuflaje platino"></span>
+                    <span class="b-element"><img src="https://api.wzhub.gg/storage/uploads/camouflages/polyatomic.jpeg" alt="logo camuflaje Poliatómico" title="camuflaje poliatómico"></span>
+                </div>
+                <div class="a">
+                    <ul id="launcher"></ul>
+                </div>
+            </li>
+            <li class="armas-elemento">
+                <div class="q">
+                    <span class="arrow"></span>
+                    <span>Cuerpo a cuerpo</span>
+                </div>
+                <div class="b">
+                    <span class="b-element"></span>
+                    <span class="b-element">Camuflajes base</span>
+                    <span class="b-element"><img src="https://api.wzhub.gg/storage/uploads/camouflages/gold.jpeg" alt="logo camuflaje Oro" title="camuflaje oro"></span>
+                    <span class="b-element"><img src="https://api.wzhub.gg/storage/uploads/camouflages/platinum.jpeg" alt="logo camuflaje Platino" title="camuflaje platino"></span>
+                    <span class="b-element"><img src="https://api.wzhub.gg/storage/uploads/camouflages/polyatomic.jpeg" alt="logo camuflaje Poliatómico" title="camuflaje poliatómico"></span>
+                </div>
+                <div class="a">
+                    <ul id="melee"></ul>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <button onclick="reset()" id="reset-button" title="Utilizar si marcaste un camuflaje que no has desbloqueado">RESET!</button>
+    <footer class="footer footer-dark">
+        <a href="https://github.com/Juan04Vargas19"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="footer-img"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 6c-3.313 0-6 2.686-6 6 0 2.651 1.719 4.9 4.104 5.693.3.056.396-.13.396-.289v-1.117c-1.669.363-2.017-.707-2.017-.707-.272-.693-.666-.878-.666-.878-.544-.373.041-.365.041-.365.603.042.92.619.92.619.535.917 1.403.652 1.746.499.054-.388.209-.652.381-.802-1.333-.152-2.733-.667-2.733-2.965 0-.655.234-1.19.618-1.61-.062-.153-.268-.764.058-1.59 0 0 .504-.161 1.65.615.479-.133.992-.199 1.502-.202.51.002 1.023.069 1.503.202 1.146-.776 1.648-.615 1.648-.615.327.826.121 1.437.06 1.588.385.42.617.955.617 1.61 0 2.305-1.404 2.812-2.74 2.96.216.186.412.551.412 1.111v1.646c0 .16.096.347.4.288 2.383-.793 4.1-3.041 4.1-5.691 0-3.314-2.687-6-6-6z"/></svg></a>
+        <p>Bogotá, Colombia.</p>
+        <a href="wa.link/5ww9vt"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="footer-img"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-5.971 18l.844-3.081c-.52-.902-.794-1.925-.794-2.973.001-3.279 2.668-5.946 5.946-5.946 1.591.001 3.084.62 4.206 1.744 1.123 1.124 1.741 2.618 1.74 4.207-.001 3.279-2.669 5.946-5.946 5.946-.995 0-1.976-.25-2.844-.724l-3.152.827zm3.298-1.903c.838.497 1.638.796 2.696.796 2.724 0 4.943-2.217 4.944-4.942.001-2.731-2.208-4.945-4.94-4.946-2.726 0-4.943 2.217-4.944 4.942 0 1.112.326 1.946.873 2.817l-.499 1.824 1.87-.491zm5.694-2.732c-.037-.062-.136-.099-.285-.174-.149-.074-.879-.434-1.015-.483-.136-.05-.235-.074-.334.074-.099.149-.384.483-.47.583-.087.099-.173.112-.322.037-.149-.074-.627-.231-1.195-.737-.442-.394-.74-.881-.827-1.029-.087-.149-.009-.229.065-.303l.223-.26.149-.248c.05-.099.025-.186-.012-.26l-.458-1.103c-.121-.29-.243-.25-.334-.255l-.286-.007c-.099 0-.26.037-.396.186s-.52.508-.52 1.24c0 .731.532 1.438.607 1.537.074.099 1.048 1.6 2.538 2.243.354.153.631.245.847.313.356.113.68.097.936.059.285-.043.879-.359 1.003-.706.123-.348.123-.645.086-.707z"/></svg></a>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/darkmode.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

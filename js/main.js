@@ -55,7 +55,7 @@ const loader = document.querySelector('.loader')
 
 loader.classList.add('loader-active')
 
-fetch('./armas.json')
+fetch('../armas.json')
     .then((resp) => resp.json())
     .then((data) =>{
         cargarArmas(data)
