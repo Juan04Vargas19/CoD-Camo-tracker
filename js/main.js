@@ -12,6 +12,7 @@ const q = document.querySelectorAll('.q')
 const a = document.querySelectorAll('.a')
 const b = document.querySelectorAll('.b')
 const arr = document.querySelectorAll('.arrow')
+const progresoElement = document.querySelector('#progreso')
 
 let buttonsBase
 let buttonsOro
@@ -35,6 +36,9 @@ let buttonsPlatPistol = []
 let buttonsPlatRckt = []
 let buttonsPlatMelee = []
 let buttonsPoliArr = []
+let progresoArr = []
+
+let progresoValor = 0
 
 let executedAr = false
 let executedBr = false
@@ -63,7 +67,6 @@ fetch('../armas.json')
 
 const cargarArmas = (data) =>{
     armas = data
-    console.log(armas)
     sectionFusilesAsalto = document.querySelector('#fusiles-asalto')
     sectionFusilesCombate = document.querySelector('#fusiles-combate')
     sectionSubfusiles = document.querySelector('#subfusiles')
@@ -298,6 +301,14 @@ setTimeout(() =>{
     const executedMeleeEnLS = localStorage.getItem('executedMelee')
     const executedPoliEnLS = localStorage.getItem('executedPoli')
 
+    const progresoEnLS = localStorage.getItem('progreso')
+    localStorage.setItem('progresoArr', JSON.stringify(progresoArr))
+    const progresoArrEnLS = JSON.parse(localStorage.getItem('progresoAr')) 
+    progresoValor = progresoEnLS
+    progresoArr = progresoArrEnLS
+
+    progreso(progresoValor)
+
     if(armasEnLS === null){
         console.log('Bienvenid@. Tu espacio en LocalStorage está vacío, puedes ignorar este mensaje :D')
     } else{
@@ -446,6 +457,10 @@ setTimeout(() =>{
             buttonsOro[indexArma].disabled = false
             armasBase = armas.filter(arma => arma.desafiosBase === true)
             buttonsBase[i].disabled = true
+            progresoArr = [...armasBase, ...armasOro, ...armasPlat, ...armasPoli]
+            localStorage.setItem('progresoArr', JSON.stringify(progresoArr))
+            progresoValor =  progresoArr.length
+            progreso(progresoValor)
     
             localStorage.setItem('armas', JSON.stringify(armas))
         })
@@ -459,6 +474,10 @@ setTimeout(() =>{
             armas[indexArma].oro = true
             armasImg[indexArma].setAttribute('src', `${armas[indexArma].imgOro}`)
             armasOro = armas.filter(arma => arma.oro === true)
+            progresoArr = [...armasBase, ...armasOro, ...armasPlat, ...armasPoli]
+            localStorage.setItem('progresoArr', JSON.stringify(progresoArr))
+            progresoValor =  progresoArr.length
+            progreso(progresoValor)
             const buttonsPlatSec = buttonsPlat[i].getAttribute('categoria')
             buttonsOro[i].disabled = true
             if(buttonsPlatSec === 'AR'){
@@ -724,6 +743,10 @@ setTimeout(() =>{
             const indexArma = armas.findIndex(arma => arma.nombre === nombreArma)
             armas[indexArma].platino = true
             armasPlat = armas.filter(arma => arma.platino === true)
+            progresoArr = [...armasBase, ...armasOro, ...armasPlat, ...armasPoli]
+            localStorage.setItem('progresoArr', JSON.stringify(progresoArr))
+            progresoValor =  progresoArr.length
+            progreso(progresoValor)
             buttonsPlat[i].disabled = true
             armasImg[indexArma].setAttribute('src', `${armas[indexArma].imgPlat}`)
     
@@ -763,9 +786,14 @@ setTimeout(() =>{
             const indexArma = armas.findIndex(arma => arma.nombre === nombreArma)
             armas[indexArma].poli = true
             armasPoli = armas.filter(arma => arma.poli === true)
+            progresoArr = [...armasBase, ...armasOro, ...armasPlat, ...armasPoli]
+            localStorage.setItem('progresoArr', JSON.stringify(progresoArr))
+            progresoValor =  progresoArr.length
+            progreso(progresoValor)
             localStorage.setItem('armas', JSON.stringify(armas))
             buttonsPoli[i].disabled = true
             armasImg[indexArma].setAttribute('src', `${armas[indexArma].imgPoli}`)
+            progreso(buttonsPoliArr.length)
     
             if(armasPoli.length === 51){
                 Swal.fire({
@@ -781,8 +809,17 @@ setTimeout(() =>{
     loader.classList.remove('loader-active')
 }, 2000)
 
+function progreso(x){
+    localStorage.setItem('progreso', progresoValor)
+    if(x <= 204){
+        resultado = ((x * 100) / 204)
+        progresoElement.textContent = `${resultado.toFixed(1)}%`
+    } else{
+        resultado = 100
+        progresoElement.textContent = `${resultado.toFixed(1)}%`
+    }
+}
 
-//Función implementada para resolver temporalmente un bug en el que al darle click nuevamente a los botones de los camuflajes se repetían en sus array correspondientes 
 function reset(){
     Swal.fire({
         title: '¿Estás seguro que quieres resetear tu progreso?',
@@ -818,6 +855,8 @@ function reset(){
             armas[i].oro = false
             armas[i].platino = false
             armas[i].poli = false
+
+            progresoValor = 0
     
             executedAr = false
             executedBr = false
@@ -834,7 +873,7 @@ function reset(){
             armasImg[i].setAttribute('src', `${armas[i].img}`)
     
             localStorage.removeItem('armas')
-
+            localStorage.removeItem('progreso')
             localStorage.removeItem('executedAr')
             localStorage.removeItem('executedBr')
             localStorage.removeItem('executedSmg')
@@ -846,6 +885,8 @@ function reset(){
             localStorage.removeItem('executedRckt')
             localStorage.removeItem('executedMelee')
             localStorage.removeItem('executedPoli')
+            localStorage.removeItem('progreso')
+            progreso(0)
         }
         } else if (result.isDenied) {
           Swal.fire('Reseteo cancelado', '', 'info')

@@ -111,7 +111,8 @@ nav{
 
 .main-desc{
     text-align: center;
-    padding: 30px 0;
+    margin-top: 10px;
+    padding: 50px 0;
     font-size: 25px;
 }
 
@@ -152,6 +153,7 @@ nav{
     align-items: center;
     opacity: 0;
     visibility: hidden;
+    z-index: 100;
 }
 
 .loader-active{
@@ -168,8 +170,8 @@ nav{
     -webkit-text-stroke: 0.3px black;
     border-radius: 10px;
     cursor: pointer;
-    position: fixed;
-    top: 90%;
+    position: sticky;
+    bottom: 10px;
     left: 90%;
 }
 
@@ -198,6 +200,37 @@ nav{
     cursor: pointer;
     display: flex;
     align-items: center;
+}
+
+.qa{
+    border: #D8E9A8 1px solid;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+    margin: 30px 0;
+    -webkit-box-shadow: 0px 13px 48px 1px rgba(78,159,61,0.45);
+    -moz-box-shadow: 0px 13px 48px 1px rgba(78,159,61,0.45);
+    box-shadow: 0px 13px 48px 1px rgba(78,159,61,0.45);
+}
+
+.progreso-elemento-dark{
+    position: sticky;
+    top: 5px;
+    z-index: 99;
+    background: #1a1a1a;
+}
+
+.progreso-elemento-light{
+    position: sticky;
+    top: 5px;
+    z-index: 99;
+    background: #9c9c9c;
+}
+
+.qa img{
+    width: 140px;
 }
 
 .q:hover, .q:hover .arrow{
@@ -262,7 +295,7 @@ nav{
     margin: 40px auto;
 }
 
-.armas-elemento{
+.armas-elemento, .progreso-elemento-dark, .progreso-elemento-light{
     padding: 0px 50px;
     font-size: 35px;
     list-style: none;
@@ -287,14 +320,14 @@ nav{
     border: #413939 1px solid;
 }
 
-.fusiles-asalto-elemento-nombre{
+.fusiles-asalto-elemento-nombre, .armas-elemento-nombre{
     text-align: center;
     padding-top: 10px;
 }
 
 .fusiles-asalto-elemento-img{
-    height: 180px;
-    width: 280px;
+    height: 145px;
+    width: 240px;
     grid-row: 2 / 6;
     justify-self: center;
     align-self: center;
