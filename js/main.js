@@ -315,8 +315,6 @@ setTimeout(() =>{
     armasOro = progresoArrOroEnLS
     armasPlat = progresoArrPlatEnLS
     armasPoli = progresoArrPoliEnLS
-    console.log(armasBase, armasOro, armasPlat, armasPoli)
-
     progreso(progresoValor)
 
     if(armasEnLS === null){
@@ -825,10 +823,8 @@ setTimeout(() =>{
 function progreso(x){
     localStorage.setItem('progreso', progresoValor)
     if(x <= 204){
-        console.log(x)
         resultado = ((x * 100) / 204)
         progresoElement.textContent = `${resultado.toFixed(1)}%`
-        console.log(resultado)
     } else{
         resultado = 100
         progresoElement.textContent = `${resultado.toFixed(1)}%`
