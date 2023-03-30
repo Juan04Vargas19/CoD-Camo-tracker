@@ -303,9 +303,19 @@ setTimeout(() =>{
 
     const progresoEnLS = localStorage.getItem('progreso')
     localStorage.setItem('progresoArr', JSON.stringify(progresoArr))
-    const progresoArrEnLS = JSON.parse(localStorage.getItem('progresoAr')) 
+    const progresoArrEnLS = JSON.parse(localStorage.getItem('progresoAr'))
+    const progresoArrBaseEnLS = JSON.parse(localStorage.getItem('progresoArrBase'))
+    const progresoArrOroEnLS = JSON.parse(localStorage.getItem('progresoArrOro'))
+    const progresoArrPlatEnLS = JSON.parse(localStorage.getItem('progresoArrPlat'))
+    const progresoArrPoliEnLS = JSON.parse(localStorage.getItem('progresoArrPoli'))
+
     progresoValor = progresoEnLS
     progresoArr = progresoArrEnLS
+    armasBase = progresoArrBaseEnLS
+    armasOro = progresoArrOroEnLS
+    armasPlat = progresoArrPlatEnLS
+    armasPoli = progresoArrPoliEnLS
+    console.log(armasBase, armasOro, armasPlat, armasPoli)
 
     progreso(progresoValor)
 
@@ -456,6 +466,7 @@ setTimeout(() =>{
             armas[indexArma].desafiosBase = true
             buttonsOro[indexArma].disabled = false
             armasBase = armas.filter(arma => arma.desafiosBase === true)
+            localStorage.setItem('progresoArrBase', JSON.stringify(armasBase))
             buttonsBase[i].disabled = true
             progresoArr = [...armasBase, ...armasOro, ...armasPlat, ...armasPoli]
             localStorage.setItem('progresoArr', JSON.stringify(progresoArr))
@@ -474,6 +485,7 @@ setTimeout(() =>{
             armas[indexArma].oro = true
             armasImg[indexArma].setAttribute('src', `${armas[indexArma].imgOro}`)
             armasOro = armas.filter(arma => arma.oro === true)
+            localStorage.setItem('progresoArrOro', JSON.stringify(armasOro))
             progresoArr = [...armasBase, ...armasOro, ...armasPlat, ...armasPoli]
             localStorage.setItem('progresoArr', JSON.stringify(progresoArr))
             progresoValor =  progresoArr.length
@@ -744,6 +756,7 @@ setTimeout(() =>{
             armas[indexArma].platino = true
             armasPlat = armas.filter(arma => arma.platino === true)
             progresoArr = [...armasBase, ...armasOro, ...armasPlat, ...armasPoli]
+            localStorage.setItem('progresoArrPlat', JSON.stringify(armasPlat))
             localStorage.setItem('progresoArr', JSON.stringify(progresoArr))
             progresoValor =  progresoArr.length
             progreso(progresoValor)
@@ -787,13 +800,13 @@ setTimeout(() =>{
             armas[indexArma].poli = true
             armasPoli = armas.filter(arma => arma.poli === true)
             progresoArr = [...armasBase, ...armasOro, ...armasPlat, ...armasPoli]
+            localStorage.setItem('progresoArrPoli', JSON.stringify(armasPoli))
             localStorage.setItem('progresoArr', JSON.stringify(progresoArr))
             progresoValor =  progresoArr.length
             progreso(progresoValor)
             localStorage.setItem('armas', JSON.stringify(armas))
             buttonsPoli[i].disabled = true
             armasImg[indexArma].setAttribute('src', `${armas[indexArma].imgPoli}`)
-            progreso(buttonsPoliArr.length)
     
             if(armasPoli.length === 51){
                 Swal.fire({
@@ -812,8 +825,10 @@ setTimeout(() =>{
 function progreso(x){
     localStorage.setItem('progreso', progresoValor)
     if(x <= 204){
+        console.log(x)
         resultado = ((x * 100) / 204)
         progresoElement.textContent = `${resultado.toFixed(1)}%`
+        console.log(resultado)
     } else{
         resultado = 100
         progresoElement.textContent = `${resultado.toFixed(1)}%`
@@ -857,6 +872,7 @@ function reset(){
             armas[i].poli = false
 
             progresoValor = 0
+            progreso(0)
     
             executedAr = false
             executedBr = false
@@ -886,7 +902,17 @@ function reset(){
             localStorage.removeItem('executedMelee')
             localStorage.removeItem('executedPoli')
             localStorage.removeItem('progreso')
-            progreso(0)
+
+            armasBase = []
+            armasOro = []
+            armasPlat = []
+            armasPoli = []
+            localStorage.setItem('progresoArrBase', JSON.stringify(armasBase))
+            localStorage.setItem('progresoArrOro', JSON.stringify(armasOro))
+            localStorage.setItem('progresoArrPlat', JSON.stringify(armasPlat))
+            localStorage.setItem('progresoArrPoli', JSON.stringify(armasPoli))
+
+            localStorage.removeItem('progresoArr')
         }
         } else if (result.isDenied) {
           Swal.fire('Reseteo cancelado', '', 'info')
